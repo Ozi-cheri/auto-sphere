@@ -1,32 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Auto-Sphere</h1>
-        <p>Your go-to platform for the latest car news and updates.</p>
-    </header>
-    <main>
-        <section>
-            {% for article in articles %}
-                <div class="article">
-                    <h2>{{ article.title }}</h2>
-                    <p>{{ article.content }}</p>
-                    <p><strong>Published on:</strong> {{ article.published_date }}</p>
-                    
-                    {% if article.image %}
-                        <img src="{{ article.image.url }}" alt="{{ article.title }}" style="max-width: 100%; height: auto;">
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header-message">
+  <h1>Welcome to Auto-Sphere</h1>
+  <p>
+    This is a platform where you can explore the latest in cars and automotive news.
+  </p>
+</div>
+
+<div class="articles-container">
+  {% for article in articles %}
+  <div class="card">
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+    <p><strong>Published on:</strong> {{ article.published_date }}</p>
+
+    {% if article.image %}
+    <img src="{{ article.image.url }}" alt="{{ article.title }}" style="max-width: 100%; height: auto;">
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="load-more">
+  <button id="loadMoreButton">Load More</button>
+</div>
+{% endblock %}
