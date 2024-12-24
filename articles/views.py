@@ -9,4 +9,7 @@ def home_view(request):
     paginator = Paginator(articles, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number) 
-    return render(request, 'articles/home.html', {'page_obj': page_obj})  
+    return render(request, 'articles/home.html', {'articles': articles})  
+
+    def signup_view(request):
+        return render(request, 'signup.html')
