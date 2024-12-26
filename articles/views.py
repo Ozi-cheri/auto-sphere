@@ -11,5 +11,5 @@ def home_view(request):
     page_obj = paginator.get_page(page_number) 
     return render(request, 'articles/home.html', {'articles': articles})  
 
-    def signup_view(request):
-        return render(request, 'signup.html')
+def signup_view(request):
+    return render(request, 'signup.html')
