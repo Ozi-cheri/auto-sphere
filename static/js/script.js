@@ -21,4 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     }
+
+    
+    const toggleButton = document.getElementById('navbar-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
 });
