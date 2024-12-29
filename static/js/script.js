@@ -12,23 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newArticles = doc.querySelector('#articles-container').innerHTML;
                     const newButton = doc.querySelector('#load-more');
 
-                    document.querySelector('#articles-container').innerHTML += newArticles;
+                    // Append new articles
+                    const articlesContainer = document.querySelector('#articles-container');
+                    articlesContainer.innerHTML += newArticles;
+
+                    // Update the "Load More" button
                     if (newButton) {
                         loadMoreButton.setAttribute('data-next-page', newButton.getAttribute('data-next-page'));
                     } else {
                         loadMoreButton.remove();
                     }
                 });
-        });
-    }
-
-    
-    const toggleButton = document.getElementById('navbar-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    if (toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
         });
     }
 });
