@@ -9,31 +9,44 @@
 </head>
 <body>
     <header>
-        <h1>Auto-Sphere</h1>
+        <h1 class="site-title">Auto-Sphere</h1>
         <nav class="navbar">
             <div class="container">
+                <!-- Brand Logo -->
                 <a href="{% url 'home' %}" class="navbar-brand">Auto-Sphere</a>
+                
+                <!-- Toggle Button for Mobile -->
                 <button class="navbar-toggle" id="navbar-toggle">
                     ☰
                 </button>
+                
+                <!-- Navbar Links -->
                 <ul class="nav-links">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'articles' %}">Articles</a></li>
+                    <li><a href="{% url 'articles' %}">Auto-Sphere</a></li>
                 </ul>
             </div>
         </nav>
-        
     </header>
     
     <main>
-        {% block content %}{% endblock %}
+        <!-- Content Block for Each Page -->
+        {% block content %}
+        {% endblock %}
     </main>
 
     <footer>
         <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
+        <p>
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://www.twitter.com" target="_blank">X</a>
+        </p>
     </footer>
+    
+    <!-- External Script -->
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

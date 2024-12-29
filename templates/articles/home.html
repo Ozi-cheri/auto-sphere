@@ -4,25 +4,15 @@
 <div class="header-message">
   <h1>Welcome to Auto-Sphere</h1>
   <p>
-    This is a platform where you can explore the latest in cars and automotive news.
+    Discover the latest trends, news, and innovations in the automotive world.
+    From luxury cars to eco-friendly vehicles, we've got it all covered.
   </p>
 </div>
 
-<div class="articles-container">
-  {% for article in articles %}
-  <div class="card">
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.content }}</p>
-    <p><strong>Published on:</strong> {{ article.published_date }}</p>
-
-    {% if article.image %}
-    <img src="{{ article.image.url }}" alt="{{ article.title }}" style="max-width: 100%; height: auto;">
-    {% endif %}
-  </div>
-  {% endfor %}
-</div>
-
-<div class="load-more">
-  <button id="loadMoreButton">Load More</button>
+<div class="auth-actions">
+  <p>
+    <a href="{% url 'signup' %}" class="btn primary-btn">Sign Up</a>
+    <a href="{% url 'login' %}" class="btn secondary-btn">Log In</a>
+  </p>
 </div>
 {% endblock %}
