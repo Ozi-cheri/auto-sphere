@@ -1,26 +1,52 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Articles Page</h1>
-    {% for article in page_obj %}
-        <div>
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.content }}</p>
-            <img src="{{ article.image.url }}" alt="{{ article.title }}">
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Card Container -->
+    <div class="card-container">
+      {% for article in page_obj %}
+      <div class="card">
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" class="article-image">
+        <div class="card-body">
+          <h3>{{ article.title }}</h3>
+          <p>{{ article.content|truncatewords:30 }}</p>
+          <p class="published-date">Published on: {{ article.published_date }}</p>
         </div>
-    {% endfor %}
-    <div>
-        {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Next</a>
-        {% endif %}
+      </div>
+      {% endfor %}
     </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+      <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+      {% endif %}
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Auto-Sphere. All rights reserved.</p>
+  </footer>
 </body>
 </html>
