@@ -115,17 +115,64 @@ header {
   color: #666;
 }
 
-/* Footer */
-footer {
+/* Home Page Styles */
+.home-page .header-message {
   text-align: center;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  margin-top: 20px;
+  margin-top: 50px;
+  color: #333;
 }
 
-footer p {
-  font-size: 14px;
+.home-page .header-message h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.home-page .auth-actions .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.home-page .auth-actions .btn.primary-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.home-page .auth-actions .btn.secondary-btn {
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+}
+
+footer .copyright {
+  text-align: left;
+}
+
+footer .social-links {
+  display: flex;
+  gap: 15px;
+}
+
+footer .social-links a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .social-links a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */

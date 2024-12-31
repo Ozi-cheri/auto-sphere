@@ -2,51 +2,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Auto-Sphere{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Auto-Sphere{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
-    <header>
-        <h1 class="site-title">Auto-Sphere</h1>
-        <nav class="navbar">
-            <div class="container">
-                <!-- Brand Logo -->
-                <a href="{% url 'home' %}" class="navbar-brand">Auto-Sphere</a>
-                
-                <!-- Toggle Button for Mobile -->
-                <button class="navbar-toggle" id="navbar-toggle">
-                    ☰
-                </button>
-                
-                <!-- Navbar Links -->
-                <ul class="nav-links">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'articles' %}">Auto-Sphere</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    
-    <main>
-        <!-- Content Block for Each Page -->
-        {% block content %}
-        {% endblock %}
-    </main>
+<body class="{% block body_class %}{% endblock %}">
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'articles' %}">Articles</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
-        <p>
-            <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
-            <a href="https://www.instagram.com" target="_blank">Instagram</a> | 
-            <a href="https://www.twitter.com" target="_blank">X</a>
-        </p>
-    </footer>
-    
-    <!-- External Script -->
-    <script src="{% static 'js/script.js' %}"></script>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://facebook.com">Facebook</a>
+      <a href="https://instagram.com">Instagram</a>
+      <a href="https://twitter.com">X</a>
+    </div>
+  </footer>
 </body>
 </html>
