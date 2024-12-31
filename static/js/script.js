@@ -1,3 +1,4 @@
+// Existing Load More functionality
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.getElementById('load-more');
 
@@ -23,6 +24,36 @@ document.addEventListener('DOMContentLoaded', () => {
                         loadMoreButton.remove();
                     }
                 });
+        });
+    }
+});
+
+// Add the Sign Up page functionality here
+document.addEventListener('DOMContentLoaded', () => {
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('password_again');
+    const passwordRules = document.querySelector('.password-rules');
+    const submitButton = document.querySelector('.form-button');
+
+    // Show password rules when user focuses on password input
+    if (passwordInput) {
+        passwordInput.addEventListener('focus', () => {
+            passwordRules.style.display = 'block';
+        });
+
+        passwordInput.addEventListener('blur', () => {
+            passwordRules.style.display = 'none';
+        });
+    }
+
+    // Enable submit button if passwords match
+    if (confirmPasswordInput) {
+        confirmPasswordInput.addEventListener('input', () => {
+            if (passwordInput.value === confirmPasswordInput.value) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
         });
     }
 });

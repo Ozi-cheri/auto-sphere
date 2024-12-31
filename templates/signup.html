@@ -1,17 +1,62 @@
-{% block content %}
-<div class="form-container">
-    <h2 class="form-title">Sign Up</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" class="form-input">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="signup-page">
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if request.path != '/signup/' %}
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'articles' %}">Articles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2 class="form-title">Sign Up</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" class="form-input" required>
+                    <p class="password-rules" style="display:none;">
+                        Password must be at least 8 characters long and contain a mix of letters and numbers.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label for="password_again">Confirm Password:</label>
+                    <input type="password" id="password_again" name="password_again" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-button" disabled>Sign Up</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" class="form-input">
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
+        <div class="footer-social">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://twitter.com">X</a>
         </div>
-        <button type="submit" class="form-button">Sign Up</button>
-    </form>
-</div>
-{% endblock %}
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
