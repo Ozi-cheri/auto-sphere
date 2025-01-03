@@ -3,18 +3,22 @@
 {% block body_class %}home-page{% endblock %}
 
 {% block content %}
-<div class="header-message">
-  <h1>Welcome to Auto-Sphere</h1>
-  <p>
-    Discover the latest trends, news, and innovations in the automotive world.
-    From luxury cars to eco-friendly vehicles, we've got it all covered.
-  </p>
-</div>
-
-<div class="auth-actions">
-  <p>
-    <a href="{% url 'signup' %}" class="btn primary-btn">Sign Up</a>
-    <a href="{% url 'login' %}" class="btn secondary-btn">Log In</a>
-  </p>
+<div class="home-container">
+  <div class="welcome-box">
+    <h1>Welcome to Auto-Sphere</h1>
+    <p>
+      Explore the latest trends, news, and innovations in the automotive industry. 
+      Whether you're into luxury cars, electric vehicles, or groundbreaking technology, 
+      Auto-Sphere brings you the best stories from the world of automobiles.
+    </p>
+    <p>
+      Join us to stay updated and be part of a community passionate about the automotive 
+      landscape. Sign up today or log in to start your journey with us.
+    </p>
+    <div class="auth-actions">
+      <a href="{% url 'signup' %}" class="btn primary-btn">Sign Up</a>
+      <a href="{% url 'login' %}" class="btn secondary-btn">Log In</a>
+    </div>
+  </div>
 </div>
 {% endblock %}
