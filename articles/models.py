@@ -7,6 +7,9 @@ class Article(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to='articles/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    upvotes = models.PositiveIntegerField(default=0)  
+    downvotes = models.PositiveIntegerField(default=0)  
+
 
     def __str__(self):
         return self.title
