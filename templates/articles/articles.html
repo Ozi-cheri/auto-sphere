@@ -28,6 +28,14 @@
           <h3>{{ article.title }}</h3>
           <p>{{ article.content|truncatewords:30 }}</p>
           <p class="published-date">Published on: {{ article.published_date }}</p>
+          <div class="vote-section">
+            <a href="{% url 'upvote_article' article.id %}" class="vote-btn upvote">
+              👍 <span>{{ article.upvotes }}</span>
+            </a>
+            <a href="{% url 'downvote_article' article.id %}" class="vote-btn downvote">
+              👎 <span>{{ article.downvotes }}</span>
+            </a>
+          </div>
         </div>
       </div>
       {% endfor %}
