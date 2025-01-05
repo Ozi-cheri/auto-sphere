@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
-from .models import Article
+from .models import Article, Comment
 
 
 def home_view(request):
@@ -33,4 +33,19 @@ def downvote_article(request, article_id):
     article.downvotes += 1
     article.save()
     return redirect('articles')  # Redirect back to articles page
+
+
+def article_detail_view(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    comments = article.comments.all()
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        text = request.POST.get('text')
+        if name and text:
+            Comment.objects.create(article=article, name=name, text=text)
+            return redirect('article_detail', pk=pk)
+
+    return render(request, 'articles/article_detail.html', {'article': article, 'comments': comments})
+   
    
