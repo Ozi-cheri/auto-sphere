@@ -42,8 +42,7 @@
       <h2>Add a Comment</h2>
       <form method="post">
         {% csrf_token %}
-        <input type="text" name="name" placeholder="Your name" required>
-        <textarea name="text" placeholder="Your comment" required></textarea>
+        {{ form.as_p }}
         <button type="submit">Submit</button>
       </form>
     </section>

@@ -1,6 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from .models import Article, Comment
+from .forms import CommentForm  # Import the CommentForm
+
+
 
 
 def home_view(request):
@@ -40,12 +43,21 @@ def article_detail_view(request, pk):
     comments = article.comments.all()
 
     if request.method == "POST":
-        name = request.POST.get('name')
-        text = request.POST.get('text')
-        if name and text:
-            Comment.objects.create(article=article, name=name, text=text)
-            return redirect('article_detail', pk=pk)
+        form = CommentForm(request.POST)  # Bind form data
+        if form.is_valid():
+            comment = form.save(commit=False)  # Do not commit to DB yet
+            comment.article = article  # Associate the comment with the article
+            comment.save()  # Save the comment
+            return redirect('article_detail', pk=pk)  # Redirect to the same page
 
-    return render(request, 'articles/article_detail.html', {'article': article, 'comments': comments})
-   
-   
+    else:
+        form = CommentForm()  # Initialize an empty form
+
+    # Fetch comments and pass them to the template
+    comments = article.comments.all()
+
+    return render(request, 'articles/article_detail.html', {
+        'article': article,
+        'comments': comments,
+        'form': form,  # Include the form in the context
+    })
