@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -7,19 +8,20 @@
     <title>Login</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
-    <!-- Header with navigation links -->
+
     <header>
         <nav>
             <ul class="navbar">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'articles' %}">Articles</a></li> <!-- Link to Articles page -->
+                <li><a href="{% url 'articles' %}">Articles</a></li>
                 <li><a href="{% url 'signup' %}">Sign Up</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Login Form -->
+
     <div class="login-container">
         <h1>Login</h1>
         <form method="post" action="{% url 'login' %}">
@@ -39,7 +41,7 @@
         <p>If you don't have an account, please <a href="{% url 'signup' %}">Sign up here</a>.</p>
     </div>
 
-    <!-- Footer with social links -->
+
     <footer>
         <p>&copy; Auto-Sphere. All rights reserved.</p>
         <div class="social-links">
@@ -50,4 +52,5 @@
     </footer>
 
 </body>
+
 </html>

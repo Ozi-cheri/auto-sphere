@@ -1,4 +1,3 @@
-// Existing Load More functionality
 document.addEventListener('DOMContentLoaded', () => {
     const loadMoreButton = document.getElementById('load-more');
 
@@ -13,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const newArticles = doc.querySelector('#articles-container').innerHTML;
                     const newButton = doc.querySelector('#load-more');
 
-                    // Append new articles
+
                     const articlesContainer = document.querySelector('#articles-container');
                     articlesContainer.innerHTML += newArticles;
 
-                    // Update the "Load More" button
+
                     if (newButton) {
                         loadMoreButton.setAttribute('data-next-page', newButton.getAttribute('data-next-page'));
                     } else {
@@ -28,14 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Add the Sign Up page functionality here
+
 document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('password_again');
     const passwordRules = document.querySelector('.password-rules');
     const submitButton = document.querySelector('.form-button');
 
-    // Show password rules when user focuses on password input
+
     if (passwordInput) {
         passwordInput.addEventListener('focus', () => {
             passwordRules.style.display = 'block';
@@ -46,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Enable submit button if passwords match
+
     if (confirmPasswordInput) {
         confirmPasswordInput.addEventListener('input', () => {
             if (passwordInput.value === confirmPasswordInput.value) {
