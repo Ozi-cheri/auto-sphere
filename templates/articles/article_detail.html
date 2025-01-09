@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ article.title }}</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
   <header>
     <nav>
@@ -23,18 +25,23 @@
       <img src="{{ article.image.url }}" alt="{{ article.title }}">
       <p>{{ article.content }}</p>
       <p class="published-date">Published on: {{ article.published_date }}</p>
+
+      <div class="comment-indicator">
+        <span class="icon">💬</span>
+        <span class="count">{{ article.comment_count }}</span> Comments
+      </div>
     </article>
 
     <section class="comments">
-      <h2>Comments</h2>
+      <h2>Comments ({{ article.comment_count }})</h2>
       {% for comment in comments %}
-        <div class="comment">
-          <p><strong>{{ comment.name }}</strong> said:</p>
-          <p>{{ comment.text }}</p>
-          <p class="comment-date">{{ comment.created_at }}</p>
-        </div>
+      <div class="comment">
+        <p><strong>{{ comment.name }}</strong> said:</p>
+        <p>{{ comment.text }}</p>
+        <p class="comment-date">{{ comment.created_at }}</p>
+      </div>
       {% empty %}
-        <p>No comments yet. Be the first to comment!</p>
+      <p>No comments yet. Be the first to comment!</p>
       {% endfor %}
     </section>
 
@@ -57,4 +64,5 @@
     </div>
   </footer>
 </body>
+
 </html>

@@ -14,6 +14,12 @@ class Article(models.Model):
     def __str__(self):
        return self.title
 
+    def comment_count(self):
+        """
+        Returns the number of comments associated with the article.
+        """
+        return self.comments.count()    
+
 class Comment(models.Model):
     article = models.ForeignKey(Article, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)  # Name of the commenter

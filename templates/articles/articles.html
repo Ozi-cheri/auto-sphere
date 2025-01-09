@@ -36,6 +36,9 @@
             <a href="{% url 'downvote_article' article.id %}" class="vote-btn downvote">
               👎 <span>{{ article.downvotes }}</span>
             </a>
+            <span class="comment-indicator">
+              💬 <a href="{% url 'article_detail' article.id %}">{{ article.comment_count }} Comments</a>
+            </span>
           </div>
         </div>
       </div>
