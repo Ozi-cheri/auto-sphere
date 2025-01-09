@@ -22,8 +22,8 @@ class Article(models.Model):
 
 class Comment(models.Model):
     article = models.ForeignKey(Article, related_name='comments', on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)  # Name of the commenter
-    text = models.TextField()  # Comment text
+    name = models.CharField(max_length=100)  
+    text = models.TextField()  
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
