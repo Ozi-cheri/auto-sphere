@@ -1,12 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Articles</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
   <header>
     <nav>
@@ -48,11 +50,11 @@
     <!-- Pagination -->
     <div class="pagination">
       {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
       {% endif %}
       <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
       {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+      <a href="?page={{ page_obj.next_page_number }}">Next</a>
       {% endif %}
     </div>
   </main>
@@ -66,4 +68,5 @@
     </div>
   </footer>
 </body>
+
 </html>

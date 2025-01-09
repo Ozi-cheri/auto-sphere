@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -7,13 +8,14 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body class="signup-page">
     <header>
         <nav>
             <ul class="navbar">
                 <li><a href="{% url 'home' %}">Home</a></li>
                 {% if request.path != '/signup/' %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
                 {% endif %}
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'articles' %}">Articles</a></li>
@@ -59,4 +61,5 @@
 
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>

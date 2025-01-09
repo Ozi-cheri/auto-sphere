@@ -1,27 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Auto-Sphere{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body class="{% block body_class %}{% endblock %}">
   <header>
     <nav>
       <ul class="navbar">
-        <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
-        
+        <li><a href="{% url 'home' %}"
+            class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+
         {% if request.resolver_match.url_name != 'signup' %}
-        <li><a href="{% url 'signup' %}" class="{% if request.resolver_match.url_name == 'signup' %}active{% endif %}">Sign Up</a></li>
+        <li><a href="{% url 'signup' %}"
+            class="{% if request.resolver_match.url_name == 'signup' %}active{% endif %}">Sign Up</a></li>
         {% endif %}
 
         {% if request.resolver_match.url_name != 'login' %}
-        <li><a href="{% url 'login' %}" class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">Login</a></li>
+        <li><a href="{% url 'login' %}"
+            class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">Login</a></li>
         {% endif %}
 
-        <li><a href="{% url 'articles' %}" class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}">Articles</a></li>
+        <li><a href="{% url 'articles' %}"
+            class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}">Articles</a></li>
       </ul>
     </nav>
   </header>
@@ -39,4 +45,5 @@
     </div>
   </footer>
 </body>
+
 </html>
