@@ -1,5 +1,9 @@
 asgiref==3.8.1
-Django==3.2.25
+cloudinary==1.42.1
+dj-database-url==2.3.0
+Django==5.1.4
+django-cloudinary-storage==0.3.0
 pillow==11.0.0
 pytz==2024.2
 sqlparse==0.5.3
+whitenoise==6.8.2
