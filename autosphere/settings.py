@@ -26,12 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net']
 
 
 # Application definition
@@ -81,11 +82,23 @@ WSGI_APPLICATION = 'autosphere.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.2/ref/ settings/#databases
 
 DATABASES = {
-    'default': db_url(os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3'))
+    
+    'default': db_url(
+        os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3')  
+    )
 }
+
+
+DATABASES = {
+    'default': db_url(os.getenv('DATABASE_URL', ''), conn_max_age=600) or {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 
 
 # Password validation
@@ -128,20 +141,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
 MEDIA_URL = '/media/'                     
-MEDIA_ROOT = BASE_DIR / 'media'  
 
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
