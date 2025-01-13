@@ -145,7 +145,7 @@ header {
 }
 
 .pagination a:hover {
-  background-color: #e38e49;
+  background-color: #146c94;
   color: #000000;
 }
 
@@ -200,23 +200,23 @@ header {
 }
 
 .auth-actions .btn.primary-btn {
-  background-color: #f6f1f1;
+  background-color: #146c94;
   color: #000000;
   font-weight: bold;
 }
 
 .auth-actions .btn.secondary-btn {
-  background-color: #f6f1f1;
+  background-color: #146c94;
   color: #000000;
   font-weight: bold;
 }
 
 .auth-actions .btn.primary-btn:hover {
-  background-color: #146c94;
+  background-color: #f6f1f1;
 }
 
 .auth-actions .btn.secondary-btn:hover {
-  background-color: #146c94;
+  background-color: #f6f1f1;
 }
 
 
@@ -290,7 +290,7 @@ input[type="password"]:focus {
 .form-button {
   width: 100%;
   padding: 12px;
-  background-color: #146c94;
+  background-color: #f6f1f1;
   color: white;
   border: none;
   border-radius: 4px;
@@ -347,7 +347,7 @@ input[type="password"]:focus {
 }
 
 .login-container button {
-  background-color: #146c94;
+  background-color: #f6f1f1;
   color: black;
   padding: 10px;
   font-size: 16px;
