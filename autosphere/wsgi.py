@@ -1,3 +1,9 @@
+import dotenv
+import os
+
+dotenv.load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
+
+
 """
 WSGI config for autosphere project.
 

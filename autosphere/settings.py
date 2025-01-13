@@ -30,9 +30,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = False 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net']
 
 
 # Application definition
