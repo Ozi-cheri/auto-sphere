@@ -18,7 +18,7 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [Features Left to Implement](#features-left-to-implement)
 - [Technologies Used](#technologies-used)
 
-## Product Objective
+## Project Objective
 The **AutoSphere** project is designed to provide users with both old and  latest automobile articles, featuring engaging content and a seamless user experience.
 
 ## Site Users' Goals
