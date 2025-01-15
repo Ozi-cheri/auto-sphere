@@ -64,7 +64,7 @@ These goals work collectively to establish AutoSphere as a go-to platform for au
 
 ## GitHub Project Board
 
-The **GitHub Project Board** is an essential tool used for organizing and managing the development workflow of the AutoSphere project. It allows the team to visualize tasks, track progress, and ensure all project objectives are met efficiently.
+The **GitHub Project Board** is an essential tool i used for organizing and managing the development workflow of the AutoSphere project. It helped me in such a way that i have to track progress, and ensure all project objectives are met efficiently.
 
 ### Structure of the Project Board
 The project board is divided into the following columns to represent the workflow:
@@ -73,7 +73,7 @@ The project board is divided into the following columns to represent the workflo
    This column contains all tasks and features that need to be implemented. It includes user stories, bug fixes, and enhancements that are planned but not yet started.
 
 2. **In Progress**:  
-   Tasks that are actively being worked on by the team are moved to this column. This provides a clear view of what is currently being developed.
+   Tasks that are actively being worked on are moved to this column. This provides a clear view of what is currently being developed.
 
 
 3. **Done**:  
@@ -84,29 +84,8 @@ The project board is divided into the following columns to represent the workflo
 - **Task Categorization**:  
   Each task is represented as a card, which includes a title, description, labels, and assignees. Labels such as `bug`, `feature`, `enhancement`, and `documentation` help categorize the cards for clarity.
 
-- **Progress Tracking**:  
-  Tasks are moved across columns as they progress through the development pipeline, providing a visual representation of the project's status.
-
-- **Integration with Issues**:  
-  GitHub Issues are linked directly to the project board. This ensures that all tasks, including bugs and new features, are tracked in one place.
-
 - **Milestones**:  
   Milestones are used to group related tasks and track progress toward significant project goals. Each milestone represents a feature release or a development phase.
-
-- **Collaboration**:  
-  The board supports collaboration by allowing team members to comment on tasks, assign tasks to specific developers, and prioritize items using drag-and-drop functionality.
-
-### Example Workflow
-
-1. **Adding a Task**:  
-   A new task, such as "Add user authentication feature," is created as a card in the `To Do` column with a detailed description, a label (e.g., `feature`), and an assignee.
-
-2. **Task in Progress**:  
-   When a developer starts working on the feature, they move the card to the `In Progress` column.
-
-
-4. **Completion**:  
-   After successful review and testing, the card is moved to the `Done` column, indicating that the task is complete.
 
 
    ## Database Schema
