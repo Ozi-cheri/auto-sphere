@@ -109,3 +109,43 @@ The project board is divided into the following columns to represent the workflo
    After successful review and testing, the card is moved to the `Done` column, indicating that the task is complete.
 
 
+   ## Database Schema
+
+The **Auto-Sphere** project uses a relational database schema designed to store and manage data efficiently for articles, comments, and user interactions. Below is the detailed table structure of the schema:
+
+### 1. `Article` Table
+Stores all articles published on the platform.
+
+| **Field Name**  | **Data Type**          | **Description**                            |
+|------------------|------------------------|--------------------------------------------|
+| `id`            | AutoField (Primary Key) | Unique identifier for each article.        |
+| `title`         | CharField (max_length=200) | Title of the article.                     |
+| `content`       | TextField              | Detailed content of the article.           |
+| `image`         | ImageField             | Associated image for the article.          |
+| `created_at`    | DateTimeField          | Timestamp when the article was created.    |
+| `upvotes`       | PositiveIntegerField   | Number of upvotes the article has received. |
+| `downvotes`     | PositiveIntegerField   | Number of downvotes the article has received. |
+
+
+### 2. `Comment` Table
+Stores all comments associated with articles.
+
+| **Field Name**  | **Data Type**          | **Description**                            |
+|------------------|------------------------|--------------------------------------------|
+| `id`            | AutoField (Primary Key) | Unique identifier for each comment.        |
+| `article`       | ForeignKey (to `Article`) | Links the comment to a specific article.   |
+| `name`          | CharField (max_length=100) | Name of the user who commented.            |
+| `text`          | TextField              | Content of the comment.                    |
+| `created_at`    | DateTimeField          | Timestamp when the comment was created.    |
+
+
+### 3. `User` Table *(Optional if using Django’s default user model)*
+Manages user authentication and permissions.
+
+| **Field Name**  | **Data Type**          | **Description**                            |
+|------------------|------------------------|--------------------------------------------|
+| `id`            | AutoField (Primary Key) | Unique identifier for each user.           |
+| `username`      | CharField (max_length=150) | Username chosen by the user.               |
+| `email`         | EmailField             | User's email address.                      |
+| `password`      | CharField              | Encrypted password for authentication.     |
+
