@@ -90,7 +90,7 @@ The project board is divided into the following columns to represent the workflo
 
    ## Database Schema
 
-The **Auto-Sphere** project uses a relational database schema designed to store and manage data efficiently for articles, comments, and user interactions. Below is the detailed table structure of the schema:
+The **Auto-Sphere** project uses a relational database schema designed to store and manage data efficiently for articles, comments, and user interactions. Below is the detailed table structure of the autosphere database schema:
 
 ### 1. `Article` Table
 Stores all articles published on the platform.
@@ -128,3 +128,8 @@ Manages user authentication and permissions.
 | `email`         | EmailField             | User's email address.                      |
 | `password`      | CharField              | Encrypted password for authentication.     |
 
+
+
+Lucid Chart Diagram of Database Schema
+
+![schema](static/images/schema.png)
