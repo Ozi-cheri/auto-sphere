@@ -129,7 +129,72 @@ Manages user authentication and permissions.
 | `password`      | CharField              | Encrypted password for authentication.     |
 
 
+## Lucid Chart Diagram of Database Schema
 
-Lucid Chart Diagram of Database Schema
+
 
 ![schema](static/images/schema.png)
+
+
+# Wireframes
+
+
+
+
+## User Stories
+
+ * Below are 3 different types of users that will likely visit my site.
+
+   *  Normal User (Not Logged In)
+   *  Logged-In User
+   *  Superuser (Admin)   
+
+
+
+ ## Normal User (Not Logged In)
+
+
+ * As new a user i want Access a signup page and interact with the platform.
+ * As a new user, i want to access a Log in page to my account if I already have one.
+ * As a site user, I want to view a visually appealing homepage so that I have a welcoming and engaging first impression of the site. 
+
+
+
+ ## Logged-In User 
+1. As a logged in user, I want to comment on articles so that I can share my opinions and join discussions.  
+2. As a logged in user, I want to upvote or downvote articles so that I can engage with the content and show my approval or disapproval.  
+3. As a logged in user, I want to upvote or downvote comments so that I can participate in discussions by supporting or disagreeing with comments.  
+4. As a logged in user, I want to see the number of comments on each article so that I can gauge the engagement level on a particular topic. 
+5. As a logged in user, I want to edit or delete my own comments so that I can update my input or remove irrelevant comments I’ve posted.  
+6. As a logged in user, I want to save articles to my favorites or bookmarks so that I can access articles I like easily in the future.  
+7. As a logged in user, I want to access a logout option so that I can securely exit the platform after using it.  
+8. As a logged in user, I want to access the full details of an article by clicking it so that I can read the complete article and understand the topic in detail.  
+9. As a logged in user, I want to see a clear and user-friendly navigation bar so that I can easily navigate to different parts of the website.  
+10. As a logged in user, I want to access a responsive layout across all devices so that I can browse the site seamlessly on mobile, tablet, or desktop. 
+
+
+## Superuser (Admin)
+1. As an admin, I want to add new articles to the site so that I can keep the content fresh and up-to-date for users.  
+2. As an admin, I want to edit existing articles so that I can correct errors or update outdated information.  
+3. As an admin, I want to delete inappropriate or irrelevant articles so that I can maintain the quality and relevance of the site content.  
+4. As an admin, I want to approve or moderate user comments so that I can ensure discussions remain respectful and adhere to guidelines.  
+5. As an admin, I want to delete inappropriate user comments so that I can keep the platform safe and welcoming for all users.  
+6. As an admin, I want to view and manage user accounts so that I can monitor user activity and take necessary administrative actions.  
+7. As an admin, I want to ban or suspend users violating the rules so that I can protect the platform from misuse or harmful behavior.  
+8. As an admin, I want to access the panel any time.
+9. As an admin, I want to manage site settings, such as the navigation layout, so that I can update features to improve user experience.  
+10. As an admin, I want to view reports or flagged content from users so that I can address problematic content or behavior quickly and efficiently.  
+
+
+
+
+
+
+
+
+
+
+
+
+              
+    
