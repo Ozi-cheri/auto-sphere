@@ -139,7 +139,7 @@ Stores all comments associated with articles.
 | `created_at`    | DateTimeField          | Timestamp when the comment was created.    |
 
 
-### 3. `User` Table *(Optional if using Django’s default user model)*
+### 3. `User` Table *
 Manages user authentication and permissions.
 
 | **Field Name**  | **Data Type**          | **Description**                            |
