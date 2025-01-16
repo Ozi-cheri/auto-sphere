@@ -12,7 +12,6 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [User Experience](#user-experience)
 - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
-- [Site Structure](#site-structure)
 - [Color Used](#color-used)
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
@@ -185,6 +184,44 @@ Manages user authentication and permissions.
 9. As an admin, I want to manage site settings, such as the navigation layout, so that I can update features to improve user experience.  
 10. As an admin, I want to view reports or flagged content from users so that I can address problematic content or behavior quickly and efficiently.  
 
+
+## Color Used
+
+
+
+
+
+
+## Existing Features
+
+ * Home page
+   * Displays a welcome message introducing the site and its purpose as well as providing easy to login and and sign up links.
+ 
+
+ * Navigation Bar
+   * A fixed navbar with links to Home, Sign Up, Login, and Articles pages.The navigation bars are Fully responsive and collapsible on smaller screens.
+
+
+ * Sign Up Page
+    * Allows users to create an account with secure validation.
+
+ * Sign Out Page
+
+ * Log In Page
+     * Enables existing users to log in securely with a "Remember Me" checkbox for conveniences. If users wants to explore the site, there are been reminded to signup if they do not have an account.
+
+
+  * Log Out Page
+     * This page displays a modal asking, "Are you sure you want to log out?" This helps to confirms the users final decision before logging out.
+
+  * Articles Page
+     * This page displays articles in a card layout with title, image, and truncated content preview. Upvote and downvote buttons are available with comment count displayed via a speech bubble icon.
+
+  * Footer
+      * Contains links to Facebook, Instagram, and Twitter. Includes copyright information.
+
+  * Admin Dashboard
+      * This page allows the site owner manage articles, comments, etc.
 
 
 
