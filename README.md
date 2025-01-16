@@ -224,6 +224,49 @@ Manages user authentication and permissions.
       * This page allows the site owner manage articles, comments, etc.
 
 
+ # Features Left to Implement
+* Comment Notifications: Notify users of new comments or replies.
+* User Profiles: Add detailed profiles for users.
+* Enhanced Commenting: Allow users to reply to comments.
+* Improved Comment Deletion: Allow users to delete their comments with confirmation.
+
+
+ ## Technologies Used
+
+### **Front-End**
+- **HTML5**: This was used to provide the structure and semantics of the web pages.
+
+- **CSS3**: It is used to  Styles the website with responsive and visually appealing designs.
+
+- **JavaScript (ES6)**: Adds interactivity and dynamic functionality to the user interface.
+- **Python (Django)**: Manages the server-side logic, routing, and database interactions using the Django web framework.
+
+### **Authentication and Security**
+- **Django AllAuth**: Provides user authentication, registration, and account management features.
+
+- **Git**: Tracks changes to the codebase, enabling collaboration and versioning.
+
+- **GitHub**: Hosts the project repository, facilitating version control and deployment.
+
+- **Heroku**: Used for hosting the live website, with easy integration for deploying Django applications.
+
+
+- **Lucidchart**: Used to create database schemas and wireframes during the planning phase.
+
+- **W3C HTML Validator**: Validates the structure and syntax of the HTML files.
+
+- **W3C CSS Validator**: Ensures the CSS adheres to standards and is error-free.
+
+- **Django Test Framework**: Verifies the functionality of views, models, and forms in the application.
+
+- **Google Fonts**: Provides custom typography to enhance the visual appeal.
+- **FontAwesome**: Supplies scalable icons for social links and UI elements.
+
+
+
+     
+
+
 
 
 
