@@ -7,7 +7,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #d4ebf8;
+  background-color: #f6f1f1;
   color: #333;
   padding: 0;
   margin: 0;
@@ -15,7 +15,7 @@ body {
 
 
 header {
-  background-color: #0a3981;
+  background-color: #19a7ce;
   color: white;
   padding: 10px 20px;
 }
@@ -145,7 +145,7 @@ header {
 }
 
 .pagination a:hover {
-  background-color: #e38e49;
+  background-color: #146c94;
   color: black;
 }
 
@@ -160,11 +160,11 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f9f9f9;
+  background-color: #f6f1f1;
 }
 
 .welcome-box {
-  background-color:#1f509a;
+  background-color:#19a7ce;
   color: white;
   text-align: center;
   padding: 30px;
@@ -212,17 +212,17 @@ header {
 }
 
 .auth-actions .btn.primary-btn:hover {
-  background-color: #e38e49;
+  background-color: #146c94;
 }
 
 .auth-actions .btn.secondary-btn:hover {
-  background-color: #e38e49;
+  background-color: #146c94;
 }
 
 
 
 footer {
-  background-color: #0a3981;
+  background-color: #19a7ce;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -246,7 +246,7 @@ footer .social-links a:hover {
 
 
 .form-container {
-  background-color: #1f509a;
+  background-color: #19a7ce;
   padding: 30px;
   max-width: 500px;
   margin: 20px auto;
@@ -299,7 +299,7 @@ input[type="password"]:focus {
 }
 
 .form-button:hover {
-  background-color: #e38e49;
+  background-color: #146c94;
 }
 
 
@@ -307,7 +307,7 @@ input[type="password"]:focus {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #1f509a;
+  background-color: #19a7ce;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: center;
@@ -357,7 +357,7 @@ input[type="password"]:focus {
 }
 
 .login-container button:hover {
-  background-color: #e38e49;
+  background-color: #146c94;
 }
 
 .login-container p {
