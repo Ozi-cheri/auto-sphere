@@ -16,6 +16,7 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
 - [Technologies Used](#technologies-used)
+- [Testing](#testing)
 
 ## Project Objective
 The **AutoSphere** project is designed to provide users with both old and  latest automobile articles, featuring engaging content and a seamless user experience.
@@ -274,6 +275,11 @@ Manages user authentication and permissions.
  * pytz==2024.2
  * sqlparse==0.5.3
  * whitenoise==6.8.2
+
+# Testing
+
+Please click here to read more about testing of the autosphere app.
+
 
 
 
