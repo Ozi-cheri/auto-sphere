@@ -17,8 +17,9 @@ def signup_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  
-            messages.success(request, "Account created successfully. You are now logged in.")
+            login(request, user)
+            messages.success(request, "Account created successfully. "
+                                      "You are now logged in.")
             return redirect('home')
         else:
             messages.error(request, "Please correct the errors below.")
@@ -80,12 +81,12 @@ def article_detail_view(request, pk):
     comments = article.comments.all()
 
     if request.method == "POST":
-        if request.user.is_authenticated:  
+        if request.user.is_authenticated:
             form = CommentForm(request.POST)
             if form.is_valid():
                 comment = form.save(commit=False)
                 comment.article = article
-                comment.author = request.user  
+                comment.author = request.user
                 comment.save()
                 messages.success(request, "Comment added successfully.")
                 return redirect('article_detail', pk=pk)
@@ -104,15 +105,12 @@ def article_detail_view(request, pk):
 
 @login_required
 def delete_comment(request, comment_id):
-    # Get the comment, or return 404 if not found
     comment = get_object_or_404(Comment, id=comment_id)
 
-    # Ensure that the user trying to delete the comment is the author
     if comment.author == request.user:
         comment.delete()
         messages.success(request, "Comment deleted successfully.")
     else:
         messages.error(request, "You can only delete your own comments.")
 
-    # Redirect back to the article detail page
     return redirect('article_detail', pk=comment.article.id)

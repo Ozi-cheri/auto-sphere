@@ -21,6 +21,9 @@ urlpatterns = [
         views.article_detail_view,
         name='article_detail'
     ),
-
-    path('comments/<int:comment_id>/delete/', views.delete_comment, name='delete_comment'),
+    path(
+        'comments/<int:comment_id>/delete/',
+        views.delete_comment,
+        name='delete_comment'
+    ),
 ]
