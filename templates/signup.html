@@ -9,57 +9,102 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
-<body class="signup-page">
+<body>
+
     <header>
         <nav>
             <ul class="navbar">
                 <li><a href="{% url 'home' %}">Home</a></li>
-                {% if request.path != '/signup/' %}
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                {% endif %}
-                <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'articles' %}">Articles</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li> <!-- Add logout if user is authenticated -->
+                {% endif %}
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="form-container">
-            <h2 class="form-title">Sign Up</h2>
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" class="form-input" required>
-                    <p class="password-rules" style="display:none;">
-                        Password must be at least 8 characters long and contain a mix of letters and numbers.
-                    </p>
-                </div>
-                <div class="form-group">
-                    <label for="password_again">Confirm Password:</label>
-                    <input type="password" id="password_again" name="password_again" class="form-input" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="form-button" disabled>Sign Up</button>
-                </div>
-            </form>
-        </div>
-    </main>
+    <div class="login-container">
+        <h1>Sign Up</h1>
+
+        <!-- Display error or success message for registration -->
+        {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Sign Up Form -->
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="{{ form.username.value }}" required>
+                {% if form.username.errors %}
+                    <div class="error-message">
+                        {% for error in form.username.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="{{ form.email.value }}" required>
+                {% if form.email.errors %}
+                    <div class="error-message">
+                        {% for error in form.email.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="password1">Password:</label>
+                <input type="password" id="password1" name="password1" required>
+                {% if form.password1.errors %}
+                    <div class="error-message">
+                        {% for error in form.password1.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="password2">Confirm Password:</label>
+                <input type="password" id="password2" name="password2" required>
+                {% if form.password2.errors %}
+                    <div class="error-message">
+                        {% for error in form.password2.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="form-button">Sign Up</button>
+            </div>
+        </form>
+
+        <p>If you already have an account, please <a href="{% url 'login' %}">Login here</a>.</p>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
-        <div class="footer-social">
-            <a href="https://facebook.com">Facebook</a>
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://twitter.com">X</a>
+        <p>&copy; Auto-Sphere. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
         </div>
     </footer>
 
-    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

@@ -7,4 +7,5 @@
 - [Manual Testing](#manual-testing)
 - [Responsiveness Testing](#responsiveness-testing)
 - [Lighthouse Testing](#lighthouse-testing)
+- [Browser Compatibility](#browser-compatibility)
 - [Known Bugs](#known-bugs)

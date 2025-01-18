@@ -17,15 +17,29 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'articles' %}">Articles</a></li>
                 <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li> <!-- Add logout if user is authenticated -->
+                {% endif %}
             </ul>
         </nav>
     </header>
 
-
     <div class="login-container">
         <h1>Login</h1>
+
+        <!-- Display error or success message for login -->
+        {% if messages %}
+            <div class="alert alert-info">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Login Form -->
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
+            
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -35,12 +49,17 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
+                <label for="remember_me">
+                    <input type="checkbox" id="remember_me" name="remember_me"> Remember Me
+                </label>
+            </div>
+            <div class="form-group">
                 <button type="submit" class="form-button">Login</button>
             </div>
         </form>
+
         <p>If you don't have an account, please <a href="{% url 'signup' %}">Sign up here</a>.</p>
     </div>
-
 
     <footer>
         <p>&copy; Auto-Sphere. All rights reserved.</p>
