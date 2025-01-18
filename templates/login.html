@@ -18,7 +18,7 @@
                 <li><a href="{% url 'articles' %}">Articles</a></li>
                 <li><a href="{% url 'signup' %}">Sign Up</a></li>
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li> <!-- Add logout if user is authenticated -->
+                    <li><a href="{% url 'logout' %}">Logout</a></li> 
                 {% endif %}
             </ul>
         </nav>
@@ -27,7 +27,7 @@
     <div class="login-container">
         <h1>Login</h1>
 
-        <!-- Display error or success message for login -->
+        
         {% if messages %}
             <div class="alert alert-info">
                 {% for message in messages %}
@@ -36,7 +36,7 @@
             </div>
         {% endif %}
 
-        <!-- Login Form -->
+        
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             
