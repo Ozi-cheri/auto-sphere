@@ -278,8 +278,7 @@ Manages user authentication and permissions.
 
 # Testing
 
-Please click here to read more about testing of the autosphere app.
-
+Please [click here](testing.md) to read more about testing of the AutoSphere app.
 
 
 
