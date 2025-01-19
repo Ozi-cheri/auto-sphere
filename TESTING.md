@@ -41,4 +41,22 @@ Below are the tools used for code validations.
  * Python Validation: [Python Validation (PEP8)](https://pep8ci.herokuapp.com/)
 
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+## Manual Testing
+
+
+
+
 
