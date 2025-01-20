@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
 from dj_database_url import config as db_url
 import cloudinary
 import cloudinary.uploader
@@ -22,6 +21,9 @@ import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import environ 
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -31,9 +33,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = False 
 
 ALLOWED_HOSTS = ['8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ["https://8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net"]
 
 
 # Application definition
@@ -86,21 +90,11 @@ WSGI_APPLICATION = 'autosphere.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/ settings/#databases
 
 DATABASES = {
-    
-    'default': db_url(
-        os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3')  
-    )
-}
-
-
-DATABASES = {
     'default': db_url(os.getenv('DATABASE_URL', ''), conn_max_age=600) or {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -145,13 +139,15 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
                     
-
-
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
+
+LOGIN_REDIRECT_URL = 'home'  
+LOGOUT_REDIRECT_URL = 'home' 
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

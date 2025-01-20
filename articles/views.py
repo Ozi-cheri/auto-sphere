@@ -20,7 +20,7 @@ def signup_view(request):
             login(request, user)
             messages.success(request, "Account created successfully. "
                                       "You are now logged in.")
-            return redirect('home')
+            return redirect('articles')
         else:
             messages.error(request, "Please correct the errors below.")
     else:
@@ -39,7 +39,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, "Login successful!")
-                return redirect('home')
+                return redirect('articles')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
