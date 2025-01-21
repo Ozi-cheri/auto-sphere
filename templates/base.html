@@ -7,24 +7,15 @@
 <head>
 
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta name="keywords" content="Auto-Sphere, Cars, Articles, Automobiles, Auto News">
-
-  <meta name="description"
-    content="Auto-Sphere is your go-to platform for the latest news and articles about cars and the automobile industry.">
-
+  <meta name="description" content="Auto-Sphere is your go-to platform for the latest news and articles about cars and the automobile industry.">
   <title>{% block title %}Auto-Sphere{% endblock %}</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
-
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
-
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
-
   <link rel="manifest" href="/site.webmanifest">
-
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
@@ -35,74 +26,54 @@
   <header>
 
     <nav>
-
       <ul class="navbar">
-
         <li><a href="{% url 'home' %}"
             class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
 
         {% if request.resolver_match.url_name != 'signup' %}
-
         <li><a href="{% url 'signup' %}"
             class="{% if request.resolver_match.url_name == 'signup' %}active{% endif %}">Sign Up</a></li>
-
         {% endif %}
-
-
 
         {% if request.resolver_match.url_name != 'login' %}
-
         <li><a href="{% url 'login' %}"
             class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">Login</a></li>
-
         {% endif %}
-
-
 
         <li><a href="{% url 'articles' %}"
             class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}">Articles</a></li>
 
+        {% if user.is_authenticated %}
+        <!-- Logout button visible only if the user is authenticated -->
+        <li><a href="{% url 'logout_confirm' %}">
+            <button class="btn btn-danger">Logout</button>
+        </a></li>
+        {% endif %}
       </ul>
-
     </nav>
 
   </header>
 
   <main>
-
     {% block content %}{% endblock %}
-
   </main>
 
   <footer>
-
     <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
-
     <div class="footer-social">
-
       <a href="https://facebook.com">Facebook</a>
-
       <a href="https://instagram.com">Instagram</a>
-
       <a href="https://twitter.com">X</a>
-
     </div>
-
   </footer>
 
   <style>
     .favicon-top-left {
-
       position: absolute;
-
       top: 10px;
-
       left: 10px;
-
       width: 32px;
-
       height: 32px;
-
     }
   </style>
 
