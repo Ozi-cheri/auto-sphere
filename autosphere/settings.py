@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from dj_database_url import config as db_url
+import environ 
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -21,7 +22,6 @@ import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-import environ 
 env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
@@ -29,17 +29,20 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
+SECRET_KEY = env('SECRET_KEY', default='default-secret-key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False 
 
-ALLOWED_HOSTS = ['auto-sphere.herokuapp.com', '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['auto-sphere.herokuapp.com'])
 
 
-CSRF_TRUSTED_ORIGINS = ["https://8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net"]
+CSRF_TRUSTED_ORIGINS = env.list(
+    'CSRF_TRUSTED_ORIGINS',
+    default=["https://8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net"]
+)
 
 
 # Application definition
@@ -92,11 +95,9 @@ WSGI_APPLICATION = 'autosphere.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/ settings/#databases
 
 DATABASES = {
-    'default': db_url(os.getenv('DATABASE_URL', ''), conn_max_age=600) or {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': db_url(env('DATABASE_URL', default='sqlite:///db.sqlite3'), conn_max_age=600)
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -142,9 +143,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
                     
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET'),
 }
 
 LOGIN_REDIRECT_URL = 'home'  
