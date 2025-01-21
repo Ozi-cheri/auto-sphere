@@ -44,7 +44,7 @@
             class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}">Articles</a></li>
 
         {% if user.is_authenticated %}
-        <!-- Logout button visible only if the user is authenticated -->
+        
         <li><a href="{% url 'logout_confirm' %}">
             <button class="btn btn-danger">Logout</button>
         </a></li>
