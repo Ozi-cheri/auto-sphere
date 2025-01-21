@@ -39,9 +39,9 @@
         <p><strong>{{ comment.name }}</strong> said:</p>
         <p>{{ comment.text }}</p>
         <p class="comment-date">{{ comment.created_at }}</p>
-        
+
         {% if comment.user == request.user %}
-        <!-- Show delete button only for the comment owner -->
+
         <form method="POST" action="{% url 'delete_comment' comment.id %}">
           {% csrf_token %}
           <button type="submit" class="btn btn-danger">Delete</button>

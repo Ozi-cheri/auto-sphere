@@ -21,7 +21,7 @@
   </header>
 
   <main>
-    <!-- Card Container -->
+    
     <div class="card-container">
       {% for article in page_obj %}
       <div class="card">
@@ -47,7 +47,7 @@
       {% endfor %}
     </div>
 
-    <!-- Pagination -->
+    
     <div class="pagination">
       {% if page_obj.has_previous %}
       <a href="?page={{ page_obj.previous_page_number }}">Previous</a>

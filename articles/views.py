@@ -61,22 +61,22 @@ def articles_view(request):
     return render(request, 'articles/articles.html', {'page_obj': page_obj})
 
 
-@login_required(login_url='/signup/')  # Redirect to the signup page if not logged in
+@login_required(login_url='/signup/')  
 def upvote_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     article.upvotes += 1
     article.save()
     messages.success(request, "You upvoted this article.")
-    return redirect('articles')  # Redirect to articles list after voting
+    return redirect('articles') 
 
 
-@login_required(login_url='/signup/')  # Redirect to the signup page if not logged in
+@login_required(login_url='/signup/')  
 def downvote_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     article.downvotes += 1
     article.save()
     messages.success(request, "You downvoted this article.")
-    return redirect('articles')  # Redirect to articles list after voting
+    return redirect('articles')  
 
 def article_detail_view(request, pk):
     article = get_object_or_404(Article, pk=pk)
@@ -119,6 +119,6 @@ def delete_comment(request, comment_id):
 
 def logout_confirm_view(request):
     if request.method == "POST":
-        logout(request)  # Logs out the user
-        return redirect('home')  # Redirects to home (or another page after logout)
-    return render(request, 'logout_confirm.html')  # Renders the logout confirmation template
+        logout(request)  
+        return redirect('home')  
+    return render(request, 'logout_confirm.html')  
