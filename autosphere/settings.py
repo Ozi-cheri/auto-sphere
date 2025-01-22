@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 DEBUG = False 
 
-ALLOWED_HOSTS = ['auto-sphere.herokuapp.com', '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['auto-sphere.herokuapp.com', '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net' 'auto-sphere-0cb7f208e934.herokuapp.com',]
 
 
 CSRF_TRUSTED_ORIGINS = ["https://8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net"]
