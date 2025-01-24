@@ -38,6 +38,12 @@ header {
   text-decoration: underline;
 }
 
+/* Active link styling */
+.navbar li a.active {
+  color: #eee8e8;  
+  font-weight: bold;
+  text-decoration: none;  
+}
 
 .card-container {
   display: flex;
