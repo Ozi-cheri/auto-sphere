@@ -1,25 +1,8 @@
+{% extends "base.html" %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ article.title }}</title>
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-
-<body>
-  <header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'articles' %}">Articles</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
+{% block content %}
     <article>
       <h1>{{ article.title }}</h1>
       <img src="{{ article.image.url }}" alt="{{ article.title }}">
@@ -65,16 +48,5 @@
       <p>You must <a href="{% url 'login' %}?next={{ request.path }}">log in</a> to comment.</p>
       {% endif %}
     </section>
-  </main>
-
-  <footer>
-    <p>&copy; Auto-Sphere. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a>
-      <a href="https://www.twitter.com" target="_blank">Twitter</a>
-    </div>
-  </footer>
-</body>
-
-</html>
+    {% endblock %}
+  

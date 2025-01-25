@@ -17,7 +17,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import environ
-
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -85,11 +85,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'autosphere.wsgi.application'
 
+#DATABASES = {
+#    'default': db_url(os.getenv('DATABASE_URL', ''), conn_max_age=600) or {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+# Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': db_url(os.getenv('DATABASE_URL', ''), conn_max_age=600) or {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
 
 AUTH_PASSWORD_VALIDATORS = [
