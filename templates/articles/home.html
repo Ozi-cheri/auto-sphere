@@ -13,10 +13,13 @@
       Join us to stay updated and be part of a community passionate about the automotive
       landscape. Sign up today or log in to start your journey with us.
     </p>
+
+    {% if not request.user.is_authenticated %}
     <div class="auth-actions">
       <a href="{% url 'signup' %}" class="btn primary-btn">Sign Up</a>
       <a href="{% url 'login' %}" class="btn secondary-btn">Log In</a>
     </div>
+    {% endif %}
   </div>
 </div>
 {% endblock %}
