@@ -2,25 +2,13 @@
 
 {% load static %}
 
-
 {% block content %}
-
     <div class="login-container">
         <h1>Sign Up</h1>
 
-       
-        {% if messages %}
-            <div class="alert alert-info">
-                {% for message in messages %}
-                    <p>{{ message }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-
-       
         <form method="post" action="{% url 'signup' %}">
             {% csrf_token %}
-            
+
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" value="" required>
@@ -32,7 +20,7 @@
                     </div>
                 {% endif %}
             </div>
-            
+
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" value="{{ form.email.value }}" required>
@@ -48,6 +36,12 @@
             <div class="form-group">
                 <label for="password1">Password:</label>
                 <input type="password" id="password1" name="password1" required>
+                <ul id="password-rules" class="password-rules" style="display: none;">
+                    <li id="rule-length">At least 8 characters</li>
+                    <li id="rule-uppercase">At least one uppercase letter</li>
+                    <li id="rule-number">At least one number</li>
+                    <li id="rule-special">At least one special character (e.g. @, #, $)</li>
+                </ul>
                 {% if form.password1.errors %}
                     <div class="error-message">
                         {% for error in form.password1.errors %}
@@ -70,11 +64,25 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="form-button">Sign Up</button>
+                <button type="submit" class="form-button" disabled>Sign Up</button>
+            </div>
+
+            <!-- Container for messages -->
+            <div class="form-group message-container">
+                {% if messages %}
+                    <div class="alert alert-info">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
         </form>
 
         <p>If you already have an account, please <a href="{% url 'login' %}">Login here</a>.</p>
     </div>
-    {% endblock %}
-    
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

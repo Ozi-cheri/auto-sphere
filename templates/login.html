@@ -2,22 +2,13 @@
 
 {% load static %}
 
-
 {% block content %}
     <div class="login-container">
         <h1>Login</h1>
 
-        {% if messages %}
-            <div class="alert alert-info">
-                {% for message in messages %}
-                    <p>{{ message }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
-            
+
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" value="" required>
@@ -51,8 +42,19 @@
             <div class="form-group">
                 <button type="submit" class="form-button">Login</button>
             </div>
+
+            <!-- Container for messages -->
+            <div class="form-group message-container">
+                {% if messages %}
+                    <div class="alert alert-info">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         </form>
 
         <p>If you don't have an account, please <a href="{% url 'signup' %}">Sign up here</a>.</p>
     </div>
-    {% endblock %}
+{% endblock %}

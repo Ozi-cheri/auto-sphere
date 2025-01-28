@@ -16,38 +16,42 @@
 
 <body>
   <header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="{% url 'home' %}"
-            class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
-        </li>
-        <li>
-          <a href="{% url 'articles' %}"
-            class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}">Articles</a>
-        </li>
 
-        {% if user.is_authenticated %}
-        <li>
-          <a href="{% url 'logout_confirm' %}"
-            class="{% if request.resolver_match.url_name == 'logout_confirm' %}active{% endif %}">
-            Logout
-          </a>
-        </li>
-        {% else %}
-        <li>
-          <a href="{% url 'signup' %}" class="{% if request.resolver_match.url_name == 'signup' %}active{% endif %}">
-            Sign Up
-          </a>
-        </li>
+    <!-- Navbar Toggle Button -->
+    <button class="navbar-toggle" aria-label="Toggle Navigation">☰</button>
 
-        <li>
-          <a href="{% url 'login' %}" class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">
-            Login
-          </a>
-        </li>
-        {% endif %}
+    <!-- Collapsible Navbar -->
+    <ul class="navbar">
+      <li><a href="{% url 'home' %}"
+          class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+      </li>
+      <li>
+        <a href="{% url 'articles' %}"
+          class="{% if request.resolver_match.url_name == 'articles' %}active{% endif %}">Articles</a>
+      </li>
 
-      </ul>
+      {% if user.is_authenticated %}
+      <li>
+        <a href="{% url 'logout_confirm' %}"
+          class="{% if request.resolver_match.url_name == 'logout_confirm' %}active{% endif %}">
+          Logout
+        </a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{% url 'signup' %}" class="{% if request.resolver_match.url_name == 'signup' %}active{% endif %}">
+          Sign Up
+        </a>
+      </li>
+
+      <li>
+        <a href="{% url 'login' %}" class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}">
+          Login
+        </a>
+      </li>
+      {% endif %}
+
+    </ul>
     </nav>
   </header>
 
@@ -63,7 +67,7 @@
       <a href="https://twitter.com">X</a>
     </div>
   </footer>
-
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
