@@ -8,6 +8,7 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [Product Objective](#product-objective)
 - [Site Users Goals](#site-users-goals)
 - [Site Owner's Goals](#site-owners-goals)
+- [Agile Methodology](#agile-methodology)
 - [GitHub Project Board](#github-project-board)
 - [User Experience](#user-experience)
 - [Wireframes](#wireframes)
@@ -62,30 +63,28 @@ The AutoSphere site owner aims to achieve the following objectives:
 
 These goals work collectively to establish AutoSphere as a go-to platform for automotive news, insights, and community engagement.
 
-## GitHub Project Board
+## Agile Methodology
 
-The **GitHub Project Board** is an essential tool i used for organizing and managing the development workflow of the AutoSphere project. It helped me in such a way that i have to track progress, and ensure all project objectives are met efficiently.
+### Agile Methodology Implementation
 
-### Structure of the Project Board
-The project board is divided into the following columns to represent the workflow:
+For this project, I implemented Agile methodology using GitHub Projects to manage tasks, track progress, and ensure an iterative development process. Below is an overview of how Agile principles were applied:
 
-1. **To Do**:  
-   This column contains all tasks and features that need to be implemented. It includes user stories, bug fixes, and enhancements that are planned but not yet started.
+### GitHub Project Board
 
-2. **In Progress**:  
-   Tasks that are actively being worked on are moved to this column. This provides a clear view of what is currently being developed.
+I created a GitHub Project to organize tasks and streamline the development workflow. The project board follows a Kanban structure with the following columns:
+
+* To Do – Upcoming tasks and features to be implemented. It includes user stories, bug fixes, and enhancements that are planned but not yet started.
 
 
-3. **Done**:  
-   Once a task is reviewed, tested, and deployed, it is moved to this column to indicate completion.
+* In Progress – Tasks currently being worked on. This provides a clear view of what is currently being developed.
 
-### Key Features of the GitHub Project Board
 
-- **Task Categorization**:  
-  Each task is represented as a card, which includes a title, description, labels, and assignees. Labels such as `bug`, `feature`, `enhancement`, and `documentation` help categorize the cards for clarity.
+* Done – Completed tasks. Once a task is reviewed, tested, and deployed, it is moved to this column to indicate completion.
 
-- **Milestones**:  
-  Milestones are used to group related tasks and track progress toward significant project goals. Each milestone represents a feature release or a development phase.
+
+### New Issues and Title (Epics
+
+Instead of traditional Milestones, I structured work using New issues, title and description. After creating new issues, i then move them to Github board under to do task.
 
 
    ## Database Schema
