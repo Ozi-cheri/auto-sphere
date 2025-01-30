@@ -7,6 +7,7 @@ from django.contrib import messages
 from .models import Article, Comment
 from .forms import CommentForm
 
+
 def home_view(request):
     return render(request, 'articles/home.html')
 
@@ -63,42 +64,68 @@ def downvote_article(request, article_id):
     article.save()
     return redirect('articles')
 
-def article_detail_view(request, pk):
-    article = get_object_or_404(Article, pk=pk)
+def article_detail_view(request, id):
+    article = get_object_or_404(Article, id=id)
     comments = article.comments.all()
-
-    if request.method == "POST":
-        if request.user.is_authenticated:
-            form = CommentForm(request.POST)
-            if form.is_valid():
-                # Save the comment with the associated article
-                comment = form.save(commit=False)  # Don't commit yet
-                comment.article = article  # Set the article for this comment
-                comment.author = request.user  # Set the user who authored the comment
-                comment.save()  # Now save the comment
-                return redirect('article_detail', pk=pk)
-        else:
-            messages.error(request, "You must log in to add a comment.")
-            return redirect('login')
-    else:
-        form = CommentForm()
 
     return render(request, 'articles/article_detail.html', {
         'article': article,
         'comments': comments,
-        'form': form,
     })
 
 @login_required
-def delete_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    if comment.author == request.user:
-        comment.delete()
-        
-    else:
-        messages.error(request, "You can only delete your own comments.")
+def add_comment(request, id):
+    """
+    Handles comment submission for an article.
+    """
+    article = get_object_or_404(Article, id=id)
 
-    return redirect('article_detail', pk=comment.article.id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.article = article
+            comment.user = request.user
+            comment.save()
+            messages.success(request, "Your comment has been posted!")
+        else:
+            messages.error(request, "There was an error with your comment.")
+
+    return redirect('article_detail', id=id)
+
+
+@login_required
+def edit_comment(request, id):
+    comment = get_object_or_404(Comment, id=id)
+
+    # Ensure only the author can edit
+    if request.user != comment.user:
+        messages.error(request, "You are not allowed to edit this comment.")
+        return redirect("article_detail", id=comment.article.id)
+
+    if request.method == "POST":
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Comment updated successfully.")
+        else:
+            messages.error(request, "Failed to update the comment. Please try again.")
+
+    return redirect("article_detail", id=comment.article.id)
+
+@login_required
+def delete_comment(request, id):
+    comment = get_object_or_404(Comment, id=id)
+
+    # Ensure only the comment's owner can delete it
+    if request.user != comment.user:
+        messages.error(request, "You are not allowed to delete this comment.")
+        return redirect("article_detail", id=comment.article.id)
+
+    comment.delete()
+    messages.success(request, "Comment deleted successfully.")
+    return redirect("article_detail", id=comment.article.id)
+
 
 def logout_confirm_view(request):
     if request.method == "POST":

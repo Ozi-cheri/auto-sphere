@@ -7,7 +7,6 @@
     <title>{% block title %}Auto-Sphere{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
@@ -39,15 +38,36 @@
             </div>
         </nav>
     </header>
-
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show d-flex align-items-center" role="alert">
+            {% if "success" in message.tags %}
+                <i class="fas fa-check-circle me-2 text-success"></i>
+            {% elif "error" in message.tags or "danger" in message.tags %}
+                <i class="fas fa-times-circle me-2 text-danger"></i>
+            {% elif "warning" in message.tags %}
+                <i class="fas fa-exclamation-triangle me-2 text-warning"></i>
+            {% elif "info" in message.tags %}
+                <i class="fas fa-info-circle me-2 text-info"></i>
+            {% endif %}
+            <span>{{ message }}</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
     <main>
       {% block content %}{% endblock %}
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Auto-Sphere. All rights reserved.</p>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>

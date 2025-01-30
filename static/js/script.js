@@ -58,3 +58,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+$(document).ready(function() {
+    $(".edit-comment-btn").click(function() {
+        let commentText = $(this).data("comment-text");
+        let editCommentUrl = $(this).data('edit-comment-url');
+
+        $("#edit-comment-text").val(commentText);
+
+        $('#editCommentForm').attr('action', editCommentUrl);
+    });
+
+
+    $(".delete-comment-btn").click(function () {
+        let commentText = $(this).data("comment-text");  
+        let deleteUrl = $(this).data("delete-comment-url"); 
+
+        $("#delete-comment-text").text(commentText); 
+        $("#deleteCommentForm").attr("action", deleteUrl);  
+
+    });
+
+});
+
+ 
