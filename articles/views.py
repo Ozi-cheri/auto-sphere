@@ -71,11 +71,11 @@ def article_detail_view(request, pk):
         if request.user.is_authenticated:
             form = CommentForm(request.POST)
             if form.is_valid():
-                comment = form.save(commit=False)
-                comment.article = article
-                # Ensure the Comment model has an `author` field
-                comment.author = request.user
-                comment.save()
+                # Save the comment with the associated article
+                comment = form.save(commit=False)  # Don't commit yet
+                comment.article = article  # Set the article for this comment
+                comment.author = request.user  # Set the user who authored the comment
+                comment.save()  # Now save the comment
                 return redirect('article_detail', pk=pk)
         else:
             messages.error(request, "You must log in to add a comment.")

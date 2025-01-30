@@ -1,6 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-
+from django.contrib.auth.models import User
 
 class Article(models.Model):
     """
@@ -12,6 +12,13 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     upvotes = models.PositiveIntegerField(default=0)
     downvotes = models.PositiveIntegerField(default=0)
+    
+    # Add user relationship
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='articles'
+    )
 
     def __str__(self):
         return self.title
@@ -28,15 +35,17 @@ class Comment(models.Model):
     Model representing a comment associated with an article.
     """
     article = models.ForeignKey(
-        Article,
+        'Article',
         related_name='comments',
         on_delete=models.CASCADE
     )
-    name = models.CharField(max_length=100)
+    user = models.ForeignKey(
+        User,
+        related_name='comments',
+        on_delete=models.CASCADE
+    )
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Comment by {self.name} on {self.article.title}"
-
-       
