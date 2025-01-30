@@ -1,42 +1,55 @@
 {% extends "base.html" %}
-
 {% load static %}
 
-
 {% block content %}
-<div class="card-container">
-  {% for article in page_obj %}
-  <div class="card">
-    <img src="{{ article.image.url }}" alt="{{ article.title }}" class="article-image">
-    <div class="card-body">
-      <h3>{{ article.title }}</h3>
-      <p>{{ article.content|truncatewords:30 }}</p>
-      
-      <a href="{% url 'article_detail' article.id %}" class="read-more">Read More</a>
-      <div class="vote-section">
-        <a href="{% url 'upvote_article' article.id %}" class="vote-btn upvote">
-          👍 <span>{{ article.upvotes }}</span>
-        </a>
-        <a href="{% url 'downvote_article' article.id %}" class="vote-btn downvote">
-          👎 <span>{{ article.downvotes }}</span>
-        </a>
-        <span class="comment-indicator">
-          💬 <a href="{% url 'article_detail' article.id %}">{{ article.comment_count }} Comments</a>
-        </span>
+<div class="container my-5">
+  <div class="row">
+    {% for article in page_obj %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" class="card-img-top">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="card-text flex-grow-1">{{ article.content|truncatewords:30 }}</p>
+          <a href="{% url 'article_detail' article.id %}" class="btn btn-primary mt-auto">Read More</a>
+        </div>
+        <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+          <div class="vote-section">
+            <a href="{% url 'upvote_article' article.id %}" class="btn btn-sm btn-outline-success">
+              <i class="fas fa-thumbs-up"></i> <span>{{ article.upvotes }}</span>
+            </a>
+            <a href="{% url 'downvote_article' article.id %}" class="btn btn-sm btn-outline-danger">
+              <i class="fas fa-thumbs-down"></i> <span>{{ article.downvotes }}</span>
+            </a>
+          </div>
+          <div class="comment-indicator">
+            <i class="fas fa-comments"></i> <a href="{% url 'article_detail' article.id %}" class="text-decoration-none">
+              {{ article.comment_count }} Comments
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
 
-
-<div class="pagination">
-  {% if page_obj.has_previous %}
-  <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-  {% endif %}
-  <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-  {% if page_obj.has_next %}
-  <a href="?page={{ page_obj.next_page_number }}">Next</a>
-  {% endif %}
+  <!-- Pagination -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center mt-4">
+      {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      </li>
+      {% endif %}
+      <li class="page-item disabled">
+        <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+      </li>
+      {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
 </div>
 {% endblock %}

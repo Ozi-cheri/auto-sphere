@@ -3,13 +3,18 @@
 {% block body_class %}home-page{% endblock %}
 
 {% block content %}
-  
-<section class="logout-confirm">
-  <h2>Are you sure you want to log out?</h2>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Yes, Log me out</button>
-  </form>
-  <a href="{% url 'articles' %}"><button class="btn btn-secondary">Cancel</button></a>
-</section>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-4 shadow-sm" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center mb-4">Are you sure you want to log out?</h2>
+
+        <form method="post" class="mb-3">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger w-100 mb-3">Yes, Log me out</button>
+        </form>
+
+        <a href="{% url 'articles' %}">
+            <button class="btn btn-secondary w-100">Cancel</button>
+        </a>
+    </div>
+</div>
 {% endblock %}

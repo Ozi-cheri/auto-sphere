@@ -1,60 +1,65 @@
 {% extends "base.html" %}
-
 {% load static %}
 
 {% block content %}
-<div class="login-container">
-    <h1>Login</h1>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
+        <h2 class="text-center mb-4">Login</h2>
 
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-
-        <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" value="" required>
-            {% if form.username.errors %}
-            <div class="error-message">
-                {% for error in form.username.errors %}
-                <p>{{ error }}</p>
-                {% endfor %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            
+            <!-- Username Field -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" value="" required>
+                {% if form.username.errors %}
+                <div class="text-danger mt-2">
+                    {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
-        </div>
 
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            {% if form.password.errors %}
-            <div class="error-message">
-                {% for error in form.password.errors %}
-                <p>{{ error }}</p>
-                {% endfor %}
+            <!-- Password Field -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+                {% if form.password.errors %}
+                <div class="text-danger mt-2">
+                    {% for error in form.password.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
-        </div>
 
-        <div class="form-group">
-            <label for="remember_me">
-                <input type="checkbox" id="remember_me" name="remember_me"> Remember Me
-            </label>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="form-button">Login</button>
-        </div>
-
-
-        <div class="form-group message-container">
-            {% if messages %}
-            <div class="alert alert-info">
-                {% for message in messages %}
-                <p>{{ message }}</p>
-                {% endfor %}
+            <!-- Remember Me Checkbox -->
+            <div class="mb-3 form-check">
+                <input type="checkbox" id="remember_me" name="remember_me" class="form-check-input">
+                <label for="remember_me" class="form-check-label">Remember Me</label>
             </div>
-            {% endif %}
-        </div>
-    </form>
 
-    <p>If you don't have an account, please <a href="{% url 'signup' %}">Sign up here</a>.</p>
+            <!-- Login Button -->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info w-100">Login</button>
+            </div>
+
+            <!-- Message Container -->
+            <div class="form-group message-container mt-3">
+                {% if messages %}
+                <div class="alert alert-info">
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+        </form>
+
+        <p class="text-center mt-3">Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
+    </div>
 </div>
 {% endblock %}

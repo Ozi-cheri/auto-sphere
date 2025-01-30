@@ -1,41 +1,44 @@
 {% extends "base.html" %}
-
 {% load static %}
 
 {% block content %}
-    <div class="login-container">
-        <h1>Sign Up</h1>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-4 shadow-sm" style="max-width: 500px; width: 100%;">
+        <h2 class="text-center mb-4">Sign Up</h2>
 
         <form method="post" action="{% url 'signup' %}">
             {% csrf_token %}
-
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" value="" required>
+            
+            <!-- Username Field -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" value="" required>
                 {% if form.username.errors %}
-                    <div class="error-message">
-                        {% for error in form.username.errors %}
-                            <p>{{ error }}</p>
-                        {% endfor %}
-                    </div>
+                <div class="text-danger mt-2">
+                    {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
                 {% endif %}
             </div>
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="{{ form.email.value }}" required>
+            <!-- Email Field -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" value="{{ form.email.value }}" required>
                 {% if form.email.errors %}
-                    <div class="error-message">
-                        {% for error in form.email.errors %}
-                            <p>{{ error }}</p>
-                        {% endfor %}
-                    </div>
+                <div class="text-danger mt-2">
+                    {% for error in form.email.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
                 {% endif %}
             </div>
 
-            <div class="form-group">
-                <label for="password1">Password:</label>
-                <input type="password" id="password1" name="password1" required>
+            <!-- Password Field -->
+            <div class="mb-3">
+                <label for="password1" class="form-label">Password:</label>
+                <input type="password" id="password1" name="password1" class="form-control" required>
                 <ul id="password-rules" class="password-rules" style="display: none;">
                     <li id="rule-length">At least 8 characters</li>
                     <li id="rule-uppercase">At least one uppercase letter</li>
@@ -43,46 +46,49 @@
                     <li id="rule-special">At least one special character (e.g. @, #, $)</li>
                 </ul>
                 {% if form.password1.errors %}
-                    <div class="error-message">
-                        {% for error in form.password1.errors %}
-                            <p>{{ error }}</p>
-                        {% endfor %}
-                    </div>
+                <div class="text-danger mt-2">
+                    {% for error in form.password1.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
                 {% endif %}
             </div>
 
-            <div class="form-group">
-                <label for="password2">Confirm Password:</label>
-                <input type="password" id="password2" name="password2" required>
+            <!-- Confirm Password Field -->
+            <div class="mb-3">
+                <label for="password2" class="form-label">Confirm Password:</label>
+                <input type="password" id="password2" name="password2" class="form-control" required>
                 {% if form.password2.errors %}
-                    <div class="error-message">
-                        {% for error in form.password2.errors %}
-                            <p>{{ error }}</p>
-                        {% endfor %}
-                    </div>
+                <div class="text-danger mt-2">
+                    {% for error in form.password2.errors %}
+                    <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
                 {% endif %}
             </div>
 
-            <div class="form-group">
-                <button type="submit" class="form-button" disabled>Sign Up</button>
+            <!-- Sign Up Button -->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info w-100" >Sign Up</button>
             </div>
 
-            <!-- Container for messages -->
-            <div class="form-group message-container">
+            <!-- Message Container -->
+            <div class="form-group message-container mt-3">
                 {% if messages %}
-                    <div class="alert alert-info">
-                        {% for message in messages %}
-                            <p>{{ message }}</p>
-                        {% endfor %}
-                    </div>
+                <div class="alert alert-info">
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
                 {% endif %}
             </div>
         </form>
 
-        <p>If you already have an account, please <a href="{% url 'login' %}">Login here</a>.</p>
+        <p class="text-center mt-3">Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
     </div>
-
+</div>
 {% endblock %}
+
 {% block scripts %}
 <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

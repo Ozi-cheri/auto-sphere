@@ -1,25 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="home-container">
-  <div class="welcome-box">
-    <h1>Welcome to Auto-Sphere</h1>
-    <p>
-      Explore the latest trends, news, and innovations in the automotive industry.
-      Whether you're into luxury cars, electric vehicles, or groundbreaking technology,
-      Auto-Sphere brings you the best stories from the world of automobiles.
-    </p>
-    <p>
-      Join us to stay updated and be part of a community passionate about the automotive
-      landscape. Sign up today or log in to start your journey with us.
-    </p>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="card shadow-lg border-0">
+        <div class="card-body text-center">
+          <h1 class="card-title text-primary fw-bold">Welcome to Auto-Sphere</h1>
+          <p class="card-text">
+            Explore the latest trends, news, and innovations in the automotive industry.
+            Whether you're into luxury cars, electric vehicles, or groundbreaking technology,
+            Auto-Sphere brings you the best stories from the world of automobiles.
+          </p>
+          <p class="card-text">
+            Join us to stay updated and be part of a community passionate about the automotive
+            landscape. Sign up today or log in to start your journey with us.
+          </p>
 
-    {% if not request.user.is_authenticated %}
-    <div class="auth-actions">
-      <a href="{% url 'signup' %}" class="btn primary-btn">Sign Up</a>
-      <a href="{% url 'login' %}" class="btn secondary-btn">Log In</a>
+          {% if not request.user.is_authenticated %}
+          <div class="mt-4">
+            <a href="{% url 'signup' %}" class="btn btn-primary me-2">Sign Up</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-primary">Log In</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
-    {% endif %}
+  </div>
+
+  <!-- New Row with Two Columns -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="content-box p-4 shadow-sm">
+        <h2 class="text-primary">Latest Trends</h2>
+        <p>
+          Stay updated with the latest developments in the automobile industry, from electric vehicles 
+          to AI-powered driving technology. We bring you insights from industry leaders and experts.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="content-box p-4 shadow-sm">
+        <h2 class="text-primary">Expert Reviews</h2>
+        <p>
+          Get in-depth car reviews, comparisons, and expert opinions to help you make informed decisions 
+          on your next vehicle purchase. Our team tests and analyzes the best cars in the market.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
+

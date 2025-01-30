@@ -32,14 +32,14 @@ ALLOWED_HOSTS = [
     '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net',
     'auto-sphere.herokuapp.com',
     'auto-sphere-0cb7f208e934.herokuapp.com',
-    '8000-ozicheri-autosphere-ktm0llf1a6r.ws-eu117.gitpod.io'
+    '8000-ozicheri-autosphere-oojn7j4u7id.ws-eu117.gitpod.io'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net',
     'https://auto-sphere.herokuapp.com',
     'https://auto-sphere-0cb7f208e934.herokuapp.com',
-    'https://8000-ozicheri-autosphere-ktm0llf1a6r.ws-eu117.gitpod.io',
+    'https://8000-ozicheri-autosphere-oojn7j4u7id.ws-eu117.gitpod.io',
 ]
 
 INSTALLED_APPS = [
