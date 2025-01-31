@@ -6,6 +6,9 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages
 from .models import Article, Comment
 from .forms import CommentForm
+from .models import Article
+from .forms import ArticleForm
+
 
 
 def home_view(request):
@@ -27,6 +30,7 @@ def signup_view(request):
     return render(request, 'signup.html', {'form': form})
 
 def login_view(request):
+    next_url = request.GET.get('next', 'articles')
     if request.method == "POST":
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
@@ -36,7 +40,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, "Login successful!")
-                return redirect('articles')
+                return redirect(next_url)
         messages.error(request, "Invalid username or password.")
     else:
         form = AuthenticationForm()
@@ -44,7 +48,7 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 def articles_view(request):
-    articles = Article.objects.all().order_by('-created_at')  # Order by newest
+    articles = Article.objects.all().order_by('-created_at')  
     paginator = Paginator(articles, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -98,7 +102,7 @@ def add_comment(request, id):
 def edit_comment(request, id):
     comment = get_object_or_404(Comment, id=id)
 
-    # Ensure only the author can edit
+    
     if request.user != comment.user:
         messages.error(request, "You are not allowed to edit this comment.")
         return redirect("article_detail", id=comment.article.id)
@@ -117,7 +121,7 @@ def edit_comment(request, id):
 def delete_comment(request, id):
     comment = get_object_or_404(Comment, id=id)
 
-    # Ensure only the comment's owner can delete it
+    
     if request.user != comment.user:
         messages.error(request, "You are not allowed to delete this comment.")
         return redirect("article_detail", id=comment.article.id)
@@ -132,3 +136,19 @@ def logout_confirm_view(request):
         logout(request)
         return redirect('home')
     return render(request, 'logout_confirm.html')
+
+
+
+@login_required(login_url='/login/')
+def create_article(request):
+    if request.method == "POST":
+        form = ArticleForm(request.POST, request.FILES)  # 
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.user = request.user  
+            article.save()
+            return redirect('articles')  
+    else:
+        form = ArticleForm()
+
+    return render(request, 'create_article.html', {'form': form})   

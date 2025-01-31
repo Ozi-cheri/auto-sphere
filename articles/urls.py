@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
+from .views import create_article
+
 
 urlpatterns = [
     path('', views.home_view, name='home'),
@@ -17,6 +19,8 @@ urlpatterns = [
     path('articles/<int:article_id>/upvote/', views.upvote_article,name='upvote_article'),
 
     path('articles/<int:article_id>/downvote/', views.downvote_article,name='downvote_article'),
+
+    path('articles/create/', create_article, name='create_article'),
 
 
  ]

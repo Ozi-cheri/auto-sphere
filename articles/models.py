@@ -13,7 +13,7 @@ class Article(models.Model):
     upvotes = models.PositiveIntegerField(default=0)
     downvotes = models.PositiveIntegerField(default=0)
     
-    # Add user relationship
+    
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
