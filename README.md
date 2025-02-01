@@ -189,12 +189,14 @@ Manages user authentication and permissions.
 
 The **Auto-Sphere** project follows a modern and visually appealing color scheme to enhance readability and user experience.  
 
-| Color Code   | Usage                                  |
-|----------------------------------------------------   |
-| **#f6f1f1**  | Background color, providing a soft and neutral base.  |
-| **#19a7ce**  | Homepage container, adding a vibrant and engaging feel. |
-| **#146c94**  | Buttons, ensuring high visibility and clear call-to-actions. |
-| **#000000**  | Used for as secondaty text.        |
+
+ **#f6f1f1**: Used for the  background color, providing a soft and neutral base. 
+
+ **#19a7ce**: Used for the Homepage container, adding a vibrant and engaging feel.
+
+ **#146c94**: Used for the Buttons, ensuring high visibility and clear call-to-actions. 
+ 
+ **#000000**: Used as secondaty text.        
 
 This color palette ensures a cohesive and user-friendly design balancing contrast and readability.  
 
