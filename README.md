@@ -10,10 +10,10 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [Site Owner's Goals](#site-owners-goals)
 - [Agile Methodology](#agile-methodology)
 - [GitHub Project Board](#github-project-board)
-- [User Experience](#user-experience)
 - [Wireframes](#wireframes)
 - [User Stories](#user-stories)
-- [Color Used](#color-used)
+- [Color Scheme](#color-scheme)
+- [Typography](#typography)
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
 - [Technologies Used](#technologies-used)
@@ -165,7 +165,7 @@ Manages user authentication and permissions.
 3. As a logged in user, I want to upvote or downvote comments so that I can participate in discussions by supporting or disagreeing with comments.  
 4. As a logged in user, I want to see the number of comments on each article so that I can gauge the engagement level on a particular topic. 
 5. As a logged in user, I want to edit or delete my own comments so that I can update my input or remove irrelevant comments I’ve posted.  
-6. As a logged in user, I want to save articles to my favorites or bookmarks so that I can access articles I like easily in the future.  
+6. As a logged in user, I want to add my own articles to the site.
 7. As a logged in user, I want to access a logout option so that I can securely exit the platform after using it.  
 8. As a logged in user, I want to access the full details of an article by clicking it so that I can read the complete article and understand the topic in detail.  
 9. As a logged in user, I want to see a clear and user-friendly navigation bar so that I can easily navigate to different parts of the website.  
@@ -185,27 +185,48 @@ Manages user authentication and permissions.
 10. As an admin, I want to view reports or flagged content from users so that I can address problematic content or behavior quickly and efficiently.  
 
 
-## Color Used
+### Color Scheme  
+
+The **Auto-Sphere** project follows a modern and visually appealing color scheme to enhance readability and user experience.  
+
+| Color Code   | Usage                                  |
+|----------------------------------------------------   |
+| **#f6f1f1**  | Background color, providing a soft and neutral base.  |
+| **#19a7ce**  | Homepage container, adding a vibrant and engaging feel. |
+| **#146c94**  | Buttons, ensuring high visibility and clear call-to-actions. |
+| **#000000**  | Used for as secondaty text.        |
+
+This color palette ensures a cohesive and user-friendly design balancing contrast and readability.  
 
 
 
 
+### Typography
+
+
+For a clean and modern look, the project uses Arial, sans-serif as the primary font. This font choice ensures high readability, compatibility across different devices, and a professional appearance.
 
 
 ## Existing Features
 
  * Home page
    * Displays a welcome message introducing the site and its purpose as well as providing easy to login and and sign up links.
+
+
+* Header
+A consistent header is present on all pages where users can see the sites logo on top left
+It includes the site title and a navigation bar.
+
  
 
  * Navigation Bar
-   * A fixed navbar with links to Home, Sign Up, Login, and Articles pages.The navigation bars are Fully responsive and collapsible on smaller screens.
+   * A fixed navbar with links to home, Sign up, login, logout and articles pages. The navigation bars are fully responsive and collapsible on smaller screens. Users can easily navigate the site using the navbar.
 
 
  * Sign Up Page
-    * Allows users to create an account with secure validation.
+    * Allows new users to create an account with secure validation before they could access the site.
 
- * Sign Out Page
+ 
 
  * Log In Page
      * Enables existing users to log in securely with a "Remember Me" checkbox for conveniences. If users wants to explore the site, there are been reminded to signup if they do not have an account.
@@ -215,20 +236,52 @@ Manages user authentication and permissions.
      * This page displays a modal asking, "Are you sure you want to log out?" This helps to confirms the users final decision before logging out.
 
   * Articles Page
-     * This page displays articles in a card layout with title, image, and truncated content preview. Upvote and downvote buttons are available with comment count displayed via a speech bubble icon.
+     * This page displays articles in a card layout with title, image, and truncated content preview. Upvote and downvote buttons are available with comment count displayed via a speech bubble icon. This helps rank articles by popularity and engagement.
+
+
+
+  * Add Article
+     * Registered users can contribute by submitting new articles. The form includes fields for the article title, content, and an optional car image upload. Articles are linked to the user who created them.
+
+
+   
+
+  * Successful Message Confirmation
+     * A confirmation message is displayed when a user successfully submits an article, comment, login and more. This ensures that users receive feedback on their actions.
+
+
+  * Detailed Article Page
+     * Clicking on an article opens a detailed view.
+Users can read the full content along with comments from other users.
+
+  *  User Comment Section
+     * Login users can leave comments on articles.
+Comments are displayed under the article with timestamps and user details.
+
+
+  * Edit And Edit Update Section
+     * Users can edit their own articles. This ensures flexibility in case of content updates.
+
+
+  * Delete Comment And Confirmation
+    * Login users have the option to delete their own comment. Before deleting a comment, users receive a confirmation prompt to prevents accidental deletions.
+  * Must Log In Section
+    * Certain features (e.g., adding articles, commenting, upvoting/downvoting) require users to log in.
+    Unauthorized users are redirected to the login page when they attempt restricted actions.
+
 
   * Footer
       * Contains links to Facebook, Instagram, and Twitter. Includes copyright information.
 
   * Admin Dashboard
-      * This page allows the site owner manage articles, comments, etc.
+      * This page allows the site owner to manage articles, comments, etc.
 
 
  # Features Left to Implement
 * Comment Notifications: Notify users of new comments or replies.
 * User Profiles: Add detailed profiles for users.
-* Enhanced Commenting: Allow users to reply to comments.
-* Improved Comment Deletion: Allow users to delete their comments with confirmation.
+
+* Add links to Facebook, Instagram, and Twitter.
 
 
  ## Technologies Used
@@ -259,8 +312,6 @@ Manages user authentication and permissions.
 
 - **Django Test Framework**: Verifies the functionality of views, models, and forms in the application.
 
-- **Google Fonts**: Provides custom typography to enhance the visual appeal.
-- **FontAwesome**: Supplies scalable icons for social links and UI elements.
 
 
  ## External Libraries
@@ -268,9 +319,13 @@ Manages user authentication and permissions.
  * asgiref==3.8.1
  * cloudinary==1.42.1
  * dj-database-url==2.3.0
- * Django==5.1.4
+ * Django==4.2.18
  * django-cloudinary-storage==0.3.0
+ * django-environ==0.12.0
+ * gunicorn==23.0.0
  * pillow==11.0.0
+ * psycopg2-binary==2.9.10
+ * python-dotenv==1.0.1
  * pytz==2024.2
  * sqlparse==0.5.3
  * whitenoise==6.8.2
