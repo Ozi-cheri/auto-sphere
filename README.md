@@ -5,7 +5,7 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 # Table Of Contents
 
 
-- [Product Objective](#product-objective)
+- [Project Objective](#project-objective)
 - [Site Users Goals](#site-users-goals)
 - [Site Owner's Goals](#site-owners-goals)
 - [Agile Methodology](#agile-methodology)
@@ -20,6 +20,7 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [Testing](#testing)
 
 ## Project Objective
+
 The **AutoSphere** project is designed to provide users with both old and  latest automobile articles, featuring engaging content and a seamless user experience.
 
 ## Site Users' Goals
@@ -62,6 +63,9 @@ The AutoSphere site owner aims to achieve the following objectives:
   Encouraging interaction is key to building a vibrant community. Through voting systems for articles and comments, as well as providing an easy way for users to comment on articles, the site fosters active discussions and a sense of participation.
 
 These goals work collectively to establish AutoSphere as a go-to platform for automotive news, insights, and community engagement.
+
+[⬆️ Back to Top](#)
+
 
 ## Agile Methodology
 
@@ -135,6 +139,8 @@ Manages user authentication and permissions.
 ![schema](static/images/schema.png)
 
 
+[⬆️ Back to Top](#)
+
 # Wireframes
 
 
@@ -201,6 +207,7 @@ The **Auto-Sphere** project follows a modern and visually appealing color scheme
 This color palette ensures a cohesive and user-friendly design balancing contrast and readability.  
 
 
+[⬆️ Back to Top](#)
 
 
 ### Typography
@@ -256,6 +263,9 @@ It includes the site title and a navigation bar.
      * Clicking on an article opens a detailed view.
 Users can read the full content along with comments from other users.
 
+   * Pagination for Articles
+     pagination is implemented on the articles page to improve loading speed and navigation. Users will be able to click “Next” to browse more articles.
+
   *  User Comment Section
      * Login users can leave comments on articles.
 Comments are displayed under the article with timestamps and user details.
@@ -268,6 +278,7 @@ Comments are displayed under the article with timestamps and user details.
   * Delete Comment And Confirmation
     * Login users have the option to delete their own comment. Before deleting a comment, users receive a confirmation prompt to prevents accidental deletions.
   * Must Log In Section
+
     * Certain features (e.g., adding articles, commenting, upvoting/downvoting) require users to log in.
     Unauthorized users are redirected to the login page when they attempt restricted actions.
 
@@ -279,11 +290,16 @@ Comments are displayed under the article with timestamps and user details.
       * This page allows the site owner to manage articles, comments, etc.
 
 
+[⬆️ Back to Top](#)
+
+
+
  # Features Left to Implement
-* Comment Notifications: Notify users of new comments or replies.
+* 
 * User Profiles: Add detailed profiles for users.
 
 * Add links to Facebook, Instagram, and Twitter.
+* Users can report articles or comments that violate guidelines.
 
 
  ## Technologies Used
@@ -296,8 +312,8 @@ Comments are displayed under the article with timestamps and user details.
 - **JavaScript (ES6)**: Adds interactivity and dynamic functionality to the user interface.
 - **Python (Django)**: Manages the server-side logic, routing, and database interactions using the Django web framework.
 
-### **Authentication and Security**
-- **Django AllAuth**: Provides user authentication, registration, and account management features.
+
+- **Django.contrib.auth** : Provides user authentication, registration, and account management features.
 
 - **Git**: Tracks changes to the codebase, enabling collaboration and versioning.
 
@@ -313,6 +329,14 @@ Comments are displayed under the article with timestamps and user details.
 - **W3C CSS Validator**: Ensures the CSS adheres to standards and is error-free.
 
 - **Django Test Framework**: Verifies the functionality of views, models, and forms in the application.
+
+- **PostgreSQL by Code Institute**: used as the postgres database.
+
+- **Cloudinary**: Used for media assets storage online.
+
+- **Balsamiq**": Used for creating wireframes.
+
+- **Bootstrap**: This project uses Bootstrap for responsive design and styling. Bootstrap provides pre-built components and a flexible grid system to enhance the user interface.
 
 
 
@@ -332,9 +356,79 @@ Comments are displayed under the article with timestamps and user details.
  * sqlparse==0.5.3
  * whitenoise==6.8.2
 
+
+
+
+## Database Design
+
+
 # Testing
 
+
 For all testing of the autosphere site, please kindly visit [TESTING.md](TESTING.md) file.
+
+
+[⬆️ Back to Top](#)
+
+
+## Deployment
+
+The live deployed application is found on Heroku
+The autosphere project used the Code Institute PostgreSQL Databse which can be obtained by following the following process below.
+
+- Sign in to the CI LMS with your email address
+- An email will be sent to you with a new Postgres Database.Note that this postgreSQL database are available only foy CI student.
+
+
+### Heroku Deployment
+
+* Make your codes are ready for deployment and set DEBUG = False.
+
+* Commit all changes made and push to GitHub.
+
+* Sign up in Heroku if you do not ahve an account, or simply log in.
+
+* Select new in the top right corner of your Heroku dashbaordand select create new app from dropdown menu.
+
+* Give your app a name and select region depending on the country you are then click on create app.
+
+* From the new app settings, click on on reveal config Vars and set your environment variables on the space provided.
+
+* Make sure that you have the following additional files set ready because Heroku needs them for proper deployment.
+- requirement.txt
+- procfile
+- runtime.txt
+
+* Click on deploy tab and connect to GitHub.
+
+* Search for you repo and click on the one you want to deploy.
+
+* Scroll down, select manaul deploy and choose main branch.
+
+* Click on deploy branch.
+
+* After few minutes a message will be displayed as **View Live Site Here**.
+
+* Click on the view live site to see your newly deployed app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### PostgreSQL Database 
+
+
+
 
 
 

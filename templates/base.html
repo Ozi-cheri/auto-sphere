@@ -19,7 +19,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto"> 
                         <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a></li>
 
                         <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'articles' %}active{% endif %}" href="{% url 'articles' %}">Articles</a></li>
