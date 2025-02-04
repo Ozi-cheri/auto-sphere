@@ -10,6 +10,7 @@ class Article(models.Model):
     content = models.TextField()
     image = CloudinaryField('image', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    published_date = models.DateTimeField(blank=True, null=True) 
     upvotes = models.PositiveIntegerField(default=0)
     downvotes = models.PositiveIntegerField(default=0)
     
@@ -48,4 +49,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Comment by {self.name} on {self.article.title}"
+        return f"Comment by {self.user.username} on {self.article.title}"
