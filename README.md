@@ -17,7 +17,12 @@ Auto-Sphere is a modern, interactive platform designed to showcase articles abou
 - [Existing Features](#existing-features)
 - [Features Left to Implement](#features-left-to-implement)
 - [Technologies Used](#technologies-used)
+- [External Libraries](#external-libraries)
+- [Database Design](#database-design)
 - [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
 
 ## Project Objective
 
@@ -132,11 +137,7 @@ Manages user authentication and permissions.
 | `password`      | CharField              | Encrypted password for authentication.     |
 
 
-## Lucid Chart Diagram of Database Schema
-
-
-
-![schema](static/images/schema.png)
+![schema](static/images/erd-diagram.png)
 
 
 [⬆️ Back to Top](#)
@@ -413,6 +414,15 @@ The autosphere project used the Code Institute PostgreSQL Databse which can be o
 
 
 
+## Credits
+
+
+
+
+
+
+
+## Acknowledgements
 
 
 
@@ -425,7 +435,10 @@ The autosphere project used the Code Institute PostgreSQL Databse which can be o
 
 
 
-### PostgreSQL Database 
+
+
+
+
 
 
 
