@@ -142,9 +142,22 @@ Manages user authentication and permissions.
 
 [⬆️ Back to Top](#)
 
-# Wireframes
+# Wireframes                                                      
+* Mobile Version                                  
+
+![wireframe](static/images/wireframe1.png)
+
+![wireframe](static/images/wireframe2.png)
+
+![wireframe](static/images/wireframe3.png)
+
+![wireframe](static/images/wireframe4.png)
+
+![wireframe](static/images/wireframe5.png)
 
 
+
+* Desktop Version
 
 
 ## User Stories
@@ -221,13 +234,13 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
 
  * Home page
    * Displays a welcome message introducing the site and its purpose as well as providing easy to login and and sign up links.
-
+     ![homepage](static/images/homepage.png)
 
 * Header
 A consistent header is present on all pages where users can see the sites logo on top left
 It includes the site title and a navigation bar.
 
- 
+    ![header](static/images/header.png)
 
  * Navigation Bar
    * A fixed navbar with links to home, Sign up, login, logout and articles pages. The navigation bars are fully responsive and collapsible on smaller screens. Users can easily navigate the site using the navbar.
@@ -236,22 +249,29 @@ It includes the site title and a navigation bar.
  * Sign Up Page
     * Allows new users to create an account with secure validation before they could access the site.
 
- 
+      ![signup](static/images/signup.png)
 
  * Log In Page
      * Enables existing users to log in securely with a "Remember Me" checkbox for conveniences. If users wants to explore the site, there are been reminded to signup if they do not have an account.
+
+     ![login](static/images/login.png)
 
 
   * Log Out Page
      * This page displays a modal asking, "Are you sure you want to log out?" This helps to confirms the users final decision before logging out.
 
-  * Articles Page
+
+      ![logout](static/images/logout.png)
+
+  * Articles  Page
      * This page displays articles in a card layout with title, image, and truncated content preview. Upvote and downvote buttons are available with comment count displayed via a speech bubble icon. This helps rank articles by popularity and engagement.
 
-
+    ![article](static/images/article.png)
 
   * Add Article
      * Registered users can contribute by submitting new articles. The form includes fields for the article title, content, and an optional car image upload. Articles are linked to the user who created them.
+
+     ![addarticle](static/images/addarticle.png)
 
 
    
@@ -260,6 +280,8 @@ It includes the site title and a navigation bar.
      * A confirmation message is displayed when a user successfully submits an article, comment, login and more. This ensures that users receive feedback on their actions.
 
 
+      ![feedback](static/images/feedback.png)
+
   * Detailed Article Page
      * Clicking on an article opens a detailed view.
 Users can read the full content along with comments from other users.
@@ -267,28 +289,52 @@ Users can read the full content along with comments from other users.
    * Pagination for Articles
      pagination is implemented on the articles page to improve loading speed and navigation. Users will be able to click “Next” to browse more articles.
 
+     ![pagination](static/images/pagination.png)
+
   *  User Comment Section
      * Login users can leave comments on articles.
 Comments are displayed under the article with timestamps and user details.
+
+      ![comment](static/images/comment.png)
+
+
+ * Upvote and Downvote Feature:
+Users can engage with articles by upvoting or downvoting them. This feature helps highlight popular content and gather feedback based on user preferences.
+
+     
+   ![votes](static/images/votes.png)
 
 
   * Edit And Edit Update Section
      * Users can edit their own articles. This ensures flexibility in case of content updates.
 
+      ![edit](static/images/edit.png)
+
 
   * Delete Comment And Confirmation
     * Login users have the option to delete their own comment. Before deleting a comment, users receive a confirmation prompt to prevents accidental deletions.
+
+       ![delete](static/images/delete.png)
+  
+  
   * Must Log In Section
 
     * Certain features (e.g., adding articles, commenting, upvoting/downvoting) require users to log in.
     Unauthorized users are redirected to the login page when they attempt restricted actions.
 
+     ![mustlogin](static/images/mustlogin.png)
 
+       
   * Footer
+
       * Contains links to Facebook, Instagram, and Twitter. Includes copyright information.
 
+      ![footer](static/images/footer.png)
+
   * Admin Dashboard
-      * This page allows the site owner to manage articles, comments, etc.
+      * This page allows the site owner to manage articles, comments, delete articles, etc.
+
+      ![admin](static/images/admin.png)
 
 
 [⬆️ Back to Top](#)
