@@ -46,17 +46,58 @@ Below are the tools used for code validations.
 
 
 
+## Browser Compatibility
+ 
+ * I tested the deployed site on the following  browsers to check for compatibility issues and the expected results were all good.
+
+ - Firefox
+ - Chrome
+ - Safari
+
+   
+               |Articles/Add Articles|
+    Home       | Signup/login/logout |           Result           |
+|--------------|---------------------|----------------------------|
+|  Displays as |Opens when clicked   |  Works as expected
+|  expected    |
+|              |Navigate to comment  |  Works as expected
+|              |section              |
+|              |Navigate to add      |  Works as expected
+|              |articles
+|              |                     |
+|              |Navigate to delete   |  Works as expected 
+|              |section
+|              |                     |
+|              |Navigate to edit     |  Works as expected 
+|              |section
 
 
 
 
 
+### Manual Test 
+
+
+* I performed manual testing with the following devices to make sure the site is functioning properly.
+
+- Mobile
+- Tablet
+- Desktop
 
 
 
-## Manual Testing
+| Results|Homepage/Signup/Login/Logout
+|--------|----------------------------------------
+|Good    |Clicking the URL displays  the home page,navigation  
+|        |links.
+|Good    |Clicking on the signup takes user to the signup page.
+|        |
+|Good    |Clicking on the login takes user to the login page.
+|        |
+|Good    |Clicking on logout,the user can see a confirmation 
+         |asking if the want to log out.
 
 
 
-
-
+|Results |Articles/Readmore/Comment/Upvotes/Downvotes
+|--------|------------------------------------------------

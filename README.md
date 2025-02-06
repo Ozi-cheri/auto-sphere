@@ -91,7 +91,7 @@ I created a GitHub Project to organize tasks and streamline the development work
 * Done – Completed tasks. Once a task is reviewed, tested, and deployed, it is moved to this column to indicate completion.
 
 
-### New Issues and Title (Epics
+### New Issues and Title-Epics
 
 Instead of traditional Milestones, I structured work using New issues, title and description. After creating new issues, i then move them to Github board under to do task.
 
@@ -158,6 +158,15 @@ Manages user authentication and permissions.
 
 
 * Desktop Version
+
+
+![wireframe](static/images/wireframe6.png)
+
+![wireframe](static/images/wireframe7.png)
+
+![wireframe](static/images/wireframe8.png)
+
+![wireframe](static/images/wireframe9.png)
 
 
 ## User Stories
@@ -457,6 +466,32 @@ The autosphere project used the Code Institute PostgreSQL Databse which can be o
 * After few minutes a message will be displayed as **View Live Site Here**.
 
 * Click on the view live site to see your newly deployed app.
+
+
+### Cloning
+
+* To clone the repository:
+
+- Go to the GitHub repository.
+- Locate the Code button and click it.
+- Choose your preferred method (HTTPS, SSH, or GitHub CLI) and copy the URL.
+- Open Git Bash or Terminal.
+- Navigate to the directory where you want the project.
+- Run the command:
+git clone https://github.com/ozi-cheri/auto-sphere.git
+- Press Enter to clone the repository.
+
+
+
+### Forking
+
+* To fork the repository:
+
+Log in to GitHub and navigate to the GitHub Repository.
+Click the Fork button at the top-right of the repository page.
+Once forked, the repository will appear in your GitHub account for independent development.
+
+
 
 
 
