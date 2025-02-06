@@ -55,21 +55,21 @@ Below are the tools used for code validations.
  - Safari
 
    
-               |Articles/Add Articles|
-    Home       | Signup/login/logout |           Result           |
-|--------------|---------------------|----------------------------|
-|  Displays as |Opens when clicked   |  Works as expected
+|              |Articles/Add Articles|
+|   Home       | Signup/login/logout |   Results    |
+|--------------|---------------------|------------  |
+| Displays as  |Opens when clicked   |  Pass        |  
 |  expected    |
-|              |Navigate to comment  |  Works as expected
+|              |Navigate to comment  |  Pass        |   
 |              |section              |
-|              |Navigate to add      |  Works as expected
+|              |Navigate to add      |  Pass        |
 |              |articles
 |              |                     |
-|              |Navigate to delete   |  Works as expected 
+|              |Navigate to delete   |  Pass        |
 |              |section
 |              |                     |
-|              |Navigate to edit     |  Works as expected 
-|              |section
+|              |Navigate to edit     |  Pass        |
+|              |section              |              |
 
 
 
@@ -78,26 +78,69 @@ Below are the tools used for code validations.
 ### Manual Test 
 
 
-* I performed manual testing with the following devices to make sure the site is functioning properly.
+* I performed manual testing to sure the site is functioning properly.
 
-- Mobile
-- Tablet
-- Desktop
 
 
 
 | Results|Homepage/Signup/Login/Logout
+|--------|-------------------------------
+|Good    |Clicking the URL displays  the home page,
+|        |
+|Good    |Clicking on the signup takes user to 
+|        |the signup page
+|Good    |Clicking on the login takes user to the login 
+|        |page.
+|Good    |Clicking on logout,the user can see 
+|        |logout confirmation message.
+
+
+
+|Results |Articles/Readmore/Comment/Up/Downvotes
 |--------|----------------------------------------
-|Good    |Clicking the URL displays  the home page,navigation  
-|        |links.
-|Good    |Clicking on the signup takes user to the signup page.
+|Good    |The user can view the articles
 |        |
-|Good    |Clicking on the login takes user to the login page.
+|Good    |When click on readmore it opens
 |        |
-|Good    |Clicking on logout,the user can see a confirmation 
-         |asking if the want to log out.
+|Good    |Login users can add comment 
+|        |
+|Good    |Login users can up/downvote
 
 
 
-|Results |Articles/Readmore/Comment/Upvotes/Downvotes
-|--------|------------------------------------------------
+|Results |Add Article/Edit/Delete/confirmation
+|--------|---------------------------------------
+|Good    |Login users can add articles
+|Good    |Login users can edit
+|Good    |Login users can delete
+|Good    |Login users recieves confirmation message
+
+
+
+|Results |Admin
+|--------|---------------------------------------
+|Good    |Admin can view total articles on site
+|Good    |Admin can see article detailes when clicked
+|Good    |Admin can delete inappropriate article
+|Good    |Admin can view number of up/downvotes
+
+
+
+
+
+
+
+
+* Mobile Devices Testing
+	
+|           |iphone xr |iphone 16 | oppo A54 5G|
+|---------- | ---------|----------|------------|
+|Home  	   | Pass 	  |Pass 	    |Pass        |
+|Signup     | Pass     |Pass      |Pass        |
+|Login      | Pass     |Pass      |Pass        |
+|Images 	   | Pass 	  |Pass 	    |Pass        |
+|Links 	   | Pass 	  |Pass 	    |Pass        |
+|Add Article| Pass     |Pass      |Pass        |
+|Comment    | Pass     |Pass      |Pass        |
+|Edit       | Pass     |Pass      |Pass        |
+|Delete     | Pass     |Pass      |Pass        |
