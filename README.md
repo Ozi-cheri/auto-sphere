@@ -497,48 +497,20 @@ Once forked, the repository will appear in your GitHub account for independent d
 
 ## Credits
 
+### Contents
+ 
+  
+  [Code Institute](https://codeinstitute.com/)
+  [Stack Overflow](https://stackoverflow.com/) and  [W3Schools](https://www.w3schools.com/) were consulted while i develop the project to gain more understanding of some codes.
+  The car images were sourced from  [Images sourced from Pexels](https://www.pexels.com/)
 
+  [Wireframes created with Balsamiq](https://balsamiq.com/)
 
+                            
 
-
-
+[Back to Top](#)
 
 ## Acknowledgements
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-              
-    
+ * Code institute for the platform.
+ * My Mentor Gareth McGirr for his supports and feedbacks.
