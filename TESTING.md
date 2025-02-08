@@ -6,10 +6,11 @@
 
 
 - [Code Validation](#code-validation)
+- [Browser Compatibility](#browser-compatibility)
 - [Manual Testing](#manual-testing)
 - [Responsiveness Testing](#responsiveness-testing)
 - [Lighthouse Testing](#lighthouse-testing)
-- [Browser Compatibility](#browser-compatibility)
+
 - [Known Bugs](#known-bugs)
 
 
@@ -17,7 +18,7 @@
 
 Below are the tools used for code validations.
 
-### Validation Links
+* Validation Links
 
 - [HTML Validation](https://validator.w3.org/)
 - [CSS Validation](https://jigsaw.w3.org/css-validator/)
@@ -28,8 +29,7 @@ Below are the tools used for code validations.
  * All codes were validated using the validation tools respectively.
 
   * HTML Validtion: [HTML Validation](https://validator.w3.org/)
-     * During the validation of HTML codes, errors regarding stray closing divs, warnings and errors due to the use of Django template snippets. Kindly visits the BUG section for more information.
- 
+     * During the validation of HTML codes, errors regarding stray closing divs, warnings and errors due to the use of Django template snippets. 
  * CSS Validation: [CSS Validation](https://jigsaw.w3.org/css-validator/)
 
     * No errors found when validated.
@@ -78,7 +78,7 @@ Below are the tools used for code validations.
 ### Manual Test 
 
 
-* I performed manual testing to sure the site is functioning properly.
+* I performed manual testing to ensure the site is functioning properly.
 
 
 
@@ -127,10 +127,6 @@ Below are the tools used for code validations.
 
 
 
-
-
-
-
 * Mobile Devices Testing
 	
 |           |iphone xr |iphone 16 | oppo A54 5G|
@@ -144,3 +140,11 @@ Below are the tools used for code validations.
 |Comment    | Pass     |Pass      |Pass        |
 |Edit       | Pass     |Pass      |Pass        |
 |Delete     | Pass     |Pass      |Pass        |
+
+
+
+### Light house Testing
+
+
+
+### Known/Resolved Bugs

@@ -69,7 +69,7 @@ The AutoSphere site owner aims to achieve the following objectives:
 
 These goals work collectively to establish AutoSphere as a go-to platform for automotive news, insights, and community engagement.
 
-[⬆️ Back to Top](#)
+[Back to Top](#)
 
 
 ## Agile Methodology
@@ -140,7 +140,7 @@ Manages user authentication and permissions.
 ![schema](static/images/erd-diagram.png)
 
 
-[⬆️ Back to Top](#)
+[Back to Top](#)
 
 # Wireframes                                                      
 * Mobile Version                                  
@@ -230,7 +230,7 @@ The **Auto-Sphere** project follows a modern and visually appealing color scheme
 This color palette ensures a cohesive and user-friendly design balancing contrast and readability.  
 
 
-[⬆️ Back to Top](#)
+[Back to Top](#)
 
 
 ### Typography
@@ -245,9 +245,9 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
    * Displays a welcome message introducing the site and its purpose as well as providing easy to login and and sign up links.
      ![homepage](static/images/homepage.png)
 
-* Header
-A consistent header is present on all pages where users can see the sites logo on top left
-It includes the site title and a navigation bar.
+  * Header
+  A consistent header is present on all pages where users can see the sites logo on top left
+  It includes the site title and a navigation bar.
 
     ![header](static/images/header.png)
 
@@ -280,6 +280,7 @@ It includes the site title and a navigation bar.
   * Add Article
      * Registered users can contribute by submitting new articles. The form includes fields for the article title, content, and an optional car image upload. Articles are linked to the user who created them.
 
+     
      ![addarticle](static/images/addarticle.png)
 
 
@@ -293,22 +294,25 @@ It includes the site title and a navigation bar.
 
   * Detailed Article Page
      * Clicking on an article opens a detailed view.
-Users can read the full content along with comments from other users.
+     Users can read the full content along with comments from other users.
+
+
+     ![detailedarticle](static/images/detailedarticle.png)
 
    * Pagination for Articles
-     pagination is implemented on the articles page to improve loading speed and navigation. Users will be able to click “Next” to browse more articles.
+     pagination is implemented on the articles page to improve loading speed and navigation. Users will be able to click previous or next to browse more articles.
 
      ![pagination](static/images/pagination.png)
 
   *  User Comment Section
      * Login users can leave comments on articles.
-Comments are displayed under the article with timestamps and user details.
+    Comments are displayed under the article with timestamps and user details.
 
       ![comment](static/images/comment.png)
 
 
  * Upvote and Downvote Feature:
-Users can engage with articles by upvoting or downvoting them. This feature helps highlight popular content and gather feedback based on user preferences.
+   Users can engage with articles by upvoting or downvoting them. This feature helps highlight popular content and gather feedback based on user preferences.
 
      
    ![votes](static/images/votes.png)
@@ -336,7 +340,7 @@ Users can engage with articles by upvoting or downvoting them. This feature help
        
   * Footer
 
-      * Contains links to Facebook, Instagram, and Twitter. Includes copyright information.
+      * Contains copyright information.
 
       ![footer](static/images/footer.png)
 
@@ -346,7 +350,7 @@ Users can engage with articles by upvoting or downvoting them. This feature help
       ![admin](static/images/admin.png)
 
 
-[⬆️ Back to Top](#)
+ [Back to Top](#)
 
 
 
@@ -355,7 +359,10 @@ Users can engage with articles by upvoting or downvoting them. This feature help
 * User Profiles: Add detailed profiles for users.
 
 * Add links to Facebook, Instagram, and Twitter.
-* Users can report articles or comments that violate guidelines.
+
+* Users can report articles or comments that     violate guidelines.
+
+* Implement where users comments will await    approval before submission.
 
 
  ## Technologies Used
@@ -415,16 +422,13 @@ Users can engage with articles by upvoting or downvoting them. This feature help
 
 
 
-## Database Design
-
-
 # Testing
 
 
 For all testing of the autosphere site, please kindly visit [TESTING.md](TESTING.md) file.
 
 
-[⬆️ Back to Top](#)
+[Back to Top](#)
 
 
 ## Deployment
@@ -433,7 +437,7 @@ The live deployed application is found on Heroku
 The autosphere project used the Code Institute PostgreSQL Databse which can be obtained by following the following process below.
 
 - Sign in to the CI LMS with your email address
-- An email will be sent to you with a new Postgres Database.Note that this postgreSQL database are available only foy CI student.
+- An email will be sent to you with a new Postgres Database.Note that this postgreSQL database are available only for CI students.
 
 
 ### Heroku Deployment
@@ -457,7 +461,7 @@ The autosphere project used the Code Institute PostgreSQL Databse which can be o
 
 * Click on deploy tab and connect to GitHub.
 
-* Search for you repo and click on the one you want to deploy.
+* Search for your repo and click on the one you want to deploy.
 
 * Scroll down, select manaul deploy and choose main branch.
 
@@ -500,9 +504,9 @@ Once forked, the repository will appear in your GitHub account for independent d
 ### Contents
  
   
-  [Code Institute](https://codeinstitute.com/)
+  [Code Institute](https://codeinstitute.com/) LMS walkthrough,
   [Stack Overflow](https://stackoverflow.com/) and  [W3Schools](https://www.w3schools.com/) were consulted while i develop the project to gain more understanding of some codes.
-  The car images were sourced from  [Images sourced from Pexels](https://www.pexels.com/)
+  The car images were sourced from [Pexels](https://www.pexels.com/)
 
   [Wireframes created with Balsamiq](https://balsamiq.com/)
 
