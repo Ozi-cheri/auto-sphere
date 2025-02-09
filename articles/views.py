@@ -5,14 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages
 from .models import Article, Comment
-from .forms import CommentForm
-from .models import Article
-from .forms import ArticleForm
-
+from .forms import CommentForm, ArticleForm
 
 
 def home_view(request):
     return render(request, 'articles/home.html')
+
 
 def signup_view(request):
     if request.method == "POST":
@@ -20,14 +18,17 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "Account created successfully. You are now logged in.")
+            messages.success(
+                request, "Account created successfully. You are now logged in."
+            )
             return redirect('articles')
         else:
-            messages.error(request, "Please correct the errors below.")
+            messages.error(request, "Please correct the errors.")
     else:
         form = UserCreationForm()
 
     return render(request, 'signup.html', {'form': form})
+
 
 def login_view(request):
     next_url = request.GET.get('next', 'articles')
@@ -47,12 +48,14 @@ def login_view(request):
 
     return render(request, 'login.html', {'form': form})
 
+
 def articles_view(request):
-    articles = Article.objects.all().order_by('-created_at')  
+    articles = Article.objects.all().order_by('-created_at')
     paginator = Paginator(articles, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'articles/articles.html', {'page_obj': page_obj})
+
 
 @login_required(login_url='/signup/')
 def upvote_article(request, article_id):
@@ -61,6 +64,7 @@ def upvote_article(request, article_id):
     article.save()
     return redirect('articles')
 
+
 @login_required(login_url='/signup/')
 def downvote_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
@@ -68,14 +72,17 @@ def downvote_article(request, article_id):
     article.save()
     return redirect('articles')
 
+
 def article_detail_view(request, id):
     article = get_object_or_404(Article, id=id)
     comments = article.comments.all()
 
-    return render(request, 'articles/article_detail.html', {
-        'article': article,
-        'comments': comments,
-    })
+    return render(
+        request,
+        'articles/article_detail.html',
+        {'article': article, 'comments': comments},
+    )
+
 
 @login_required
 def add_comment(request, id):
@@ -102,7 +109,6 @@ def add_comment(request, id):
 def edit_comment(request, id):
     comment = get_object_or_404(Comment, id=id)
 
-    
     if request.user != comment.user:
         messages.error(request, "You are not allowed to edit this comment.")
         return redirect("article_detail", id=comment.article.id)
@@ -113,15 +119,15 @@ def edit_comment(request, id):
             form.save()
             messages.success(request, "Comment updated successfully.")
         else:
-            messages.error(request, "Failed to update the comment. Please try again.")
+            messages.error(request, "Failed to update the comment. Try again.")
 
     return redirect("article_detail", id=comment.article.id)
+
 
 @login_required
 def delete_comment(request, id):
     comment = get_object_or_404(Comment, id=id)
 
-    
     if request.user != comment.user:
         messages.error(request, "You are not allowed to delete this comment.")
         return redirect("article_detail", id=comment.article.id)
@@ -138,17 +144,16 @@ def logout_confirm_view(request):
     return render(request, 'logout_confirm.html')
 
 
-
 @login_required(login_url='/login/')
 def create_article(request):
     if request.method == "POST":
-        form = ArticleForm(request.POST, request.FILES)  # 
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save(commit=False)
-            article.user = request.user  
+            article.user = request.user
             article.save()
-            return redirect('articles')  
+            return redirect('articles')
     else:
         form = ArticleForm()
 
-    return render(request, 'create_article.html', {'form': form})   
+    return render(request, 'create_article.html', {'form': form})

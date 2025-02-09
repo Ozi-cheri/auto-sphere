@@ -2,6 +2,7 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
+
 class Article(models.Model):
     """
     Model representing an article with title, content, image, and votes.
@@ -10,11 +11,10 @@ class Article(models.Model):
     content = models.TextField()
     image = CloudinaryField('image', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    published_date = models.DateTimeField(blank=True, null=True) 
+    published_date = models.DateTimeField(blank=True, null=True)
     upvotes = models.PositiveIntegerField(default=0)
     downvotes = models.PositiveIntegerField(default=0)
-    
-    
+
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
