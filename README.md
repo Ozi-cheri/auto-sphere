@@ -227,15 +227,15 @@ Manages user authentication and permissions.
 The **Auto-Sphere** project follows a modern and visually appealing color scheme to enhance readability and user experience.  
 
 
- **#f6f1f1**: Used for the  background color, providing a soft and neutral base. 
+ **#f6f1f1**: Used for the  background color, providing a soft and neutral base. It provides balance and warmth, ensuring readability while maintaining a clean aesthetic.
 
- **#19a7ce**: Used for the Homepage container, adding a vibrant and engaging feel.
+ **#19a7ce**: Used for the header, adding a vibrant and engaging feel.
 
- **#146c94**: Used for the Buttons, ensuring high visibility and clear call-to-actions. 
- 
- **#000000**: Used as secondaty text.        
+ **#3592F7**: (Sky Blue): A bright, calming blue that represents trust, technology, and innovation.
+ **#FFFFFF**: This a pure and clean color that symbolizes simplicity and clarity. It helps create a minimalistic and fresh feel, enhancing the overall readability and balance of the design.
+    
 
-This color palette ensures a cohesive and user-friendly design balancing contrast and readability.  
+ ![color](static/images/color.png)   
 
 
 [Back to Top](#)
