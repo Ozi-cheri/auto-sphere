@@ -275,7 +275,7 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
   * Articles  Page
      * This page displays articles in a card layout with title, image, and truncated content preview. Upvote and downvote buttons are available with comment count displayed via a speech bubble icon. This helps rank articles by popularity and engagement.
 
-    ![article](static/images/article.png)
+    ![article](static/images/articlespage.png)
 
   * Add Article
      * Registered users can contribute by submitting new articles. The form includes fields for the article title, content, and an optional car image upload. Articles are linked to the user who created them.

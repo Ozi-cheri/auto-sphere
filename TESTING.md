@@ -29,48 +29,39 @@ Below are the tools used for code validations.
  * All codes were validated using the validation tools respectively.
 
   * HTML Validtion: [HTML Validation](https://validator.w3.org/)
-     * During the validation of HTML codes, errors regarding stray closing divs, warnings and errors due to the use of Django template snippets. 
+
+     * During the validation of HTML codes, errors regarding stray closing divs but was removed.
+     * Warnings and errors due to the use of Django template snippets. 
+
+     ![htmlerror](static/images/htmlerror.png)
+
+
  * CSS Validation: [CSS Validation](https://jigsaw.w3.org/css-validator/)
 
     * No errors found when validated.
 
+     ![css](static/images/cssvalidation.png)
+
  * Javascript Validation: [JavaScript Validation (JSHint)](https://jshint.com/)
+
+     ![javascript](static/images/javascript.png)
 
 
 
  * Python Validation: [Python Validation (PEP8)](https://pep8ci.herokuapp.com/)
 
- - Article App validation
+ 
+     ![views.py](static/images/viewspy.png)
 
- ![views.py](static/images/viewspy.png)
+     ![urls.py](static/images/urlspy.png)
 
- ![urls.py](static/images/urlspy.png)
+     ![forms.py](static/images/formspy.png)
 
- ![forms.py](static/images/formspy.png)
+     ![model.py](static/images/modelspy.png)
 
- ![model.py](static/images/modelspy.png)
-
- ![admin.py](static/images/adminspy.png)
-
-
- - Autosphere App Validation
-
- ![wireframe](static/images/wireframe6.png)
-
- ![wireframe](static/images/wireframe6.png)
-
- ![wireframe](static/images/wireframe6.png)
-
- ![wireframe](static/images/wireframe6.png)
-
- ![wireframe](static/images/wireframe6.png)
-
+     ![admin.py](static/images/adminspy.png)
 
  
-
-
-
-
 ## Browser Compatibility
  
  * I tested the deployed site on the following  browsers to check for compatibility issues and the expected results were all good.
@@ -173,3 +164,7 @@ Below are the tools used for code validations.
 
 
 ### Known/Resolved Bugs
+
+
+* During the validation of HTML codes, errors regarding stray closing divs but was removed.
+* Warnings and errors due to the use of Django template snippets. 
