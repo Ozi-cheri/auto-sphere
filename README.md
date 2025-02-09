@@ -235,7 +235,7 @@ The **Auto-Sphere** project follows a modern and visually appealing color scheme
  **#FFFFFF**: This a pure and clean color that symbolizes simplicity and clarity. It helps create a minimalistic and fresh feel, enhancing the overall readability and balance of the design.
     
 
- ![color](static/images/color.png)   
+![color](static/images/color.png)   
 
 
 [Back to Top](#)
@@ -264,7 +264,7 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
 
 
  * Sign Up Page
-    * Allows new users to create an account with secure validation before they could access the site.
+    * Allows new users to create an account with secure validation before they could access the site. I performed series of tests and i asked some friends to do same to make sure the deployed site is functioning properly.
 
   ![signup](static/images/signup.png)
 
