@@ -4,45 +4,58 @@
 <div class="container mt-5">
     <h2 class="mb-4">Create a New Article</h2>
 
+    <!-- Form to create a new article -->
     <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
         {% csrf_token %}
+        <!-- CSRF protection token -->
 
+        <!-- Title input field -->
         <div class="mb-3">
             <label for="id_title" class="form-label">Title</label>
-            <input type="text" id="id_title" name="title" class="form-control" placeholder="Enter article title" required>
+            <input type="text" id="id_title" name="title" class="form-control" placeholder="Enter article title"
+                required>
+            <!-- Validation message for title -->
             <div class="invalid-feedback">
                 Please provide a title.
             </div>
         </div>
 
+        <!-- Content input field -->
         <div class="mb-3">
             <label for="id_content" class="form-label">Content</label>
-            <textarea id="id_content" name="content" class="form-control" rows="6" placeholder="Write your article here..." required></textarea>
+            <textarea id="id_content" name="content" class="form-control" rows="6"
+                placeholder="Write your article here..." required></textarea>
+            <!-- Validation message for content -->
             <div class="invalid-feedback">
                 Content cannot be empty.
             </div>
         </div>
 
+        <!-- Image upload input field -->
         <div class="mb-3">
             <label for="id_image" class="form-label">Upload Image</label>
             <input type="file" id="id_image" name="image" class="form-control">
         </div>
 
+        <!-- Submit button -->
         <button type="submit" class="btn btn-primary">Submit Article</button>
     </form>
 </div>
 
-
+<!-- Script for form validation -->
 <script>
     (function () {
         'use strict';
         var forms = document.querySelectorAll('.needs-validation');
+        // Loop through each form
         Array.prototype.slice.call(forms).forEach(function (form) {
             form.addEventListener('submit', function (event) {
+                // If form is not valid, prevent form submission
                 if (!form.checkValidity()) {
                     event.preventDefault();
                     event.stopPropagation();
                 }
+                // Add Bootstrap validation styles
                 form.classList.add('was-validated');
             }, false);
         });

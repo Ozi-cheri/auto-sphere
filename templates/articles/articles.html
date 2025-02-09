@@ -3,26 +3,39 @@
 
 {% block content %}
 <div class="container my-5">
-  
+
+  <!-- Card displaying articles -->
   <div class="card mb-4">
+
+    <!-- Card header with title and add article button -->
     <div class="card-header d-flex justify-content-between align-items-center">
       <h4 class="mb-0">Articles</h4>
       <a href="{% url 'create_article' %}" class="btn btn-primary btn-sm">Add Article</a>
     </div>
-    
+
+    <!-- Card body with article list -->
     <div class="card-body">
       <div class="row">
         {% for article in page_obj %}
+
+        <!-- Single article card -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card h-100 shadow-sm">
+
+            <!-- Article image -->
             <img src="{{ article.image.url }}" alt="{{ article.title }}" class="card-img-top">
+
+            <!-- Article content -->
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ article.title }}</h5>
               <p class="card-text flex-grow-1">{{ article.content|truncatewords:30 }}</p>
               <a href="{% url 'article_detail' article.id %}" class="btn btn-primary mt-auto">Read More</a>
             </div>
+
+            <!-- Card footer with voting and comment count -->
             <div class="card-footer bg-white d-flex justify-content-between align-items-center">
               <div class="vote-section">
+                <!-- Upvote and downvote buttons -->
                 <a href="{% url 'upvote_article' article.id %}" class="btn btn-sm btn-outline-success">
                   <i class="fas fa-thumbs-up"></i> <span>{{ article.upvotes }}</span>
                 </a>
@@ -31,19 +44,22 @@
                 </a>
               </div>
               <div class="comment-indicator">
-                <i class="fas fa-comments"></i> <a href="{% url 'article_detail' article.id %}" class="text-decoration-none">
+                <!-- Comment count link -->
+                <i class="fas fa-comments"></i> <a href="{% url 'article_detail' article.id %}"
+                  class="text-decoration-none">
                   {{ article.comment_count }} Comments
                 </a>
               </div>
             </div>
           </div>
         </div>
+
         {% endfor %}
       </div>
     </div>
   </div>
 
-  
+  <!-- Pagination navigation -->
   <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center mt-4">
       {% if page_obj.has_previous %}
@@ -62,4 +78,5 @@
     </ul>
   </nav>
 </div>
+
 {% endblock %}

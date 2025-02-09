@@ -2,17 +2,23 @@
 {% load static %}
 
 {% block content %}
+<!-- Container for the sign-up form centered on the page -->
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <!-- Card to display the sign-up form -->
     <div class="card p-4 shadow-sm" style="max-width: 500px; width: 100%;">
+        <!-- Header for the sign-up form -->
         <h2 class="text-center mb-4">Sign Up</h2>
 
+        <!-- Form to handle user sign-up -->
         <form method="post" action="{% url 'signup' %}">
             {% csrf_token %}
-            
-            
+            <!-- CSRF protection token -->
+
+            <!-- Username field -->
             <div class="mb-3">
                 <label for="username" class="form-label">Username:</label>
                 <input type="text" id="username" name="username" class="form-control" value="" required>
+                <!-- Display any validation errors for the username field -->
                 {% if form.username.errors %}
                 <div class="text-danger mt-2">
                     {% for error in form.username.errors %}
@@ -22,10 +28,12 @@
                 {% endif %}
             </div>
 
-           
+            <!-- Email field -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" value="{{ form.email.value }}" required>
+                <input type="email" id="email" name="email" class="form-control" value="{{ form.email.value }}"
+                    required>
+                <!-- Display any validation errors for the email field -->
                 {% if form.email.errors %}
                 <div class="text-danger mt-2">
                     {% for error in form.email.errors %}
@@ -35,16 +43,18 @@
                 {% endif %}
             </div>
 
-            
+            <!-- Password field with rules for strong password -->
             <div class="mb-3">
                 <label for="password1" class="form-label">Password:</label>
                 <input type="password" id="password1" name="password1" class="form-control" required>
+                <!-- Password strength rules (hidden by default) -->
                 <ul id="password-rules" class="password-rules" style="display: none;">
                     <li id="rule-length">At least 8 characters</li>
                     <li id="rule-uppercase">At least one uppercase letter</li>
                     <li id="rule-number">At least one number</li>
                     <li id="rule-special">At least one special character (e.g. @, #, $)</li>
                 </ul>
+                <!-- Display any validation errors for the password field -->
                 {% if form.password1.errors %}
                 <div class="text-danger mt-2">
                     {% for error in form.password1.errors %}
@@ -54,10 +64,11 @@
                 {% endif %}
             </div>
 
-            
+            <!-- Password confirmation field -->
             <div class="mb-3">
                 <label for="password2" class="form-label">Confirm Password:</label>
                 <input type="password" id="password2" name="password2" class="form-control" required>
+                <!-- Display any validation errors for the confirmation password field -->
                 {% if form.password2.errors %}
                 <div class="text-danger mt-2">
                     {% for error in form.password2.errors %}
@@ -67,12 +78,12 @@
                 {% endif %}
             </div>
 
-          
+            <!-- Submit button to complete sign-up -->
             <div class="mb-3">
-                <button type="submit" class="btn btn-info w-100" >Sign Up</button>
+                <button type="submit" class="btn btn-info w-100">Sign Up</button>
             </div>
 
-            
+            <!-- Display any general messages -->
             <div class="form-group message-container mt-3">
                 {% if messages %}
                 <div class="alert alert-info">
@@ -84,11 +95,13 @@
             </div>
         </form>
 
+        <!-- Link to login page if the user already has an account -->
         <p class="text-center mt-3">Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
     </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
+<!-- Include the external script for additional functionality -->
 <script src="{% static 'js/script.js' %}"></script>
 {% endblock %}

@@ -5,21 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta information for search engines and SEO -->
     <meta name="description"
         content="discussion on cars,auto-sphere, automotive innovations. Stay updated with latest car.">
     <meta name="keywords"
         content="Auto-Sphere, cars, automotive news, car articles, electric vehicles, solar-powered cars, car technology, auto innovations, car trends, automotive discussions">
+    <!-- Page title -->
     <title>{% block title %}Auto-Sphere{% endblock %}</title>
+
+    <!-- Favicons for different devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+
+    <!-- External CSS links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Custom CSS -->
 </head>
 
 <body>
+    <!-- Navbar with dynamic active links based on the current page -->
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -29,24 +35,23 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+                        <!-- Links to Home and Articles with active class condition -->
                         <li class="nav-item"><a
                                 class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}"
                                 href="{% url 'home' %}">Home</a></li>
-
                         <li class="nav-item"><a
                                 class="nav-link {% if request.resolver_match.url_name == 'articles' %}active{% endif %}"
                                 href="{% url 'articles' %}">Articles</a></li>
 
+                        <!-- Dynamic authentication links (Sign Up/Login or Logout) -->
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a
                                 class="nav-link {% if request.resolver_match.url_name == 'logout_confirm' %}active{% endif %}"
                                 href="{% url 'logout_confirm' %}">Logout</a></li>
                         {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'signup' %}active{% endif %}"
-                                href="{% url 'signup' %}">Sign Up</a>
-                        </li>
-
+                        <li class="nav-item"><a
+                                class="nav-link {% if request.resolver_match.url_name == 'signup' %}active{% endif %}"
+                                href="{% url 'signup' %}">Sign Up</a></li>
                         <li class="nav-item"><a
                                 class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}"
                                 href="{% url 'login' %}">Login</a></li>
@@ -56,10 +61,13 @@
             </div>
         </nav>
     </header>
+
+    <!-- Displaying any messages (success, error, etc.) -->
     {% if messages %}
     <div class="container mt-3">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }} alert-dismissible fade show d-flex align-items-center" role="alert">
+            <!-- Icons for different message types -->
             {% if "success" in message.tags %}
             <i class="fas fa-check-circle me-2 text-success"></i>
             {% elif "error" in message.tags or "danger" in message.tags %}
@@ -76,15 +84,20 @@
     </div>
     {% endif %}
 
+    <!-- Main content block -->
     <main>
         {% block content %}{% endblock %}
     </main>
 
+    <!-- Footer section -->
     <footer>
         <p>&copy; 2025 Auto-Sphere. </p>
     </footer>
+
+    <!-- External JS libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
     <script src="{% static 'js/script.js' %}"></script>
 
 </body>

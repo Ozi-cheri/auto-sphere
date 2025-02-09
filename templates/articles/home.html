@@ -5,18 +5,25 @@
   <div class="row justify-content-center">
     <div class="col-md-12">
       <div class="card shadow-lg border-0">
+
+        <!-- Card body with welcome message and description -->
         <div class="card-body text-center">
           <h1 class="card-title text-primary fw-bold">Welcome to Auto-Sphere</h1>
+
+          <!-- Brief description of the website -->
           <p class="card-text">
             Explore the latest trends, news, and innovations in the automotive industry.
             Whether you are into luxury cars, electric vehicles, or groundbreaking technology,
             Auto-Sphere brings you the best stories from the world of automobiles.
           </p>
+
+          <!-- Encouragement to sign up or log in -->
           <p class="card-text">
             Join us to stay updated and be part of a community passionate about the automotive
             landscape. Sign up today or log in to start your journey with us.
           </p>
 
+          <!-- Sign up and log in buttons (only visible to non-authenticated users) -->
           {% if not request.user.is_authenticated %}
           <div class="mt-4">
             <a href="{% url 'signup' %}" class="btn btn-primary me-2">Sign Up</a>

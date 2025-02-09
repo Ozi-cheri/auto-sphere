@@ -3,9 +3,11 @@
 
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <!-- Card displaying 500 error message -->
     <div class="card p-4 shadow-sm text-center" style="max-width: 600px; width: 100%;">
         <h1 class="display-4 text-black">Oops! Something Went Wrong (500)</h1>
         <p class="lead text-muted">We're experiencing some technical difficulties. Please try again later.</p>
+        <!-- Button to redirect to the homepage -->
         <a href="{% url 'home' %}" class="btn btn-primary">Go back to home</a>
     </div>
 </div>

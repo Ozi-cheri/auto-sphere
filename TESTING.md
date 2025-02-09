@@ -40,6 +40,31 @@ Below are the tools used for code validations.
 
  * Python Validation: [Python Validation (PEP8)](https://pep8ci.herokuapp.com/)
 
+ - Article App validation
+
+ ![views.py](static/images/viewspy.png)
+
+ ![urls.py](static/images/urlspy.png)
+
+ ![forms.py](static/images/formspy.png)
+
+ ![model.py](static/images/modelspy.png)
+
+ ![admin.py](static/images/adminspy.png)
+
+
+ - Autosphere App Validation
+
+ ![wireframe](static/images/wireframe6.png)
+
+ ![wireframe](static/images/wireframe6.png)
+
+ ![wireframe](static/images/wireframe6.png)
+
+ ![wireframe](static/images/wireframe6.png)
+
+ ![wireframe](static/images/wireframe6.png)
+
 
  
 

@@ -2,17 +2,23 @@
 {% load static %}
 
 {% block content %}
+<!-- Container to center the login card on the page -->
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <!-- Card for the login form -->
     <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
+        <!-- Title for the login page -->
         <h2 class="text-center mb-4">Login</h2>
 
+        <!-- Login form -->
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
-            
-            
+            <!-- CSRF protection token -->
+
+            <!-- Username field -->
             <div class="mb-3">
                 <label for="username" class="form-label">Username:</label>
                 <input type="text" id="username" name="username" class="form-control" value="" required>
+                <!-- Display errors if there are any -->
                 {% if form.username.errors %}
                 <div class="text-danger mt-2">
                     {% for error in form.username.errors %}
@@ -22,10 +28,11 @@
                 {% endif %}
             </div>
 
-            
+            <!-- Password field -->
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
                 <input type="password" id="password" name="password" class="form-control" required>
+                <!-- Display errors if there are any -->
                 {% if form.password.errors %}
                 <div class="text-danger mt-2">
                     {% for error in form.password.errors %}
@@ -35,18 +42,18 @@
                 {% endif %}
             </div>
 
-          
+            <!-- Remember me checkbox -->
             <div class="mb-3 form-check">
                 <input type="checkbox" id="remember_me" name="remember_me" class="form-check-input">
                 <label for="remember_me" class="form-check-label">Remember Me</label>
             </div>
 
-            
+            <!-- Submit button -->
             <div class="mb-3">
                 <button type="submit" class="btn btn-info w-100">Login</button>
             </div>
 
-           
+            <!-- Message container for displaying form-related messages -->
             <div class="form-group message-container mt-3">
                 {% if messages %}
                 <div class="alert alert-info">
@@ -59,6 +66,7 @@
 
         </form>
 
+        <!-- Link to the signup page for users who don't have an account -->
         <p class="text-center mt-3">Don't have an account? <a href="{% url 'signup' %}">Sign up here</a>.</p>
     </div>
 </div>

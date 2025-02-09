@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net',
     'auto-sphere.herokuapp.com',
     'auto-sphere-0cb7f208e934.herokuapp.com',
-    '8000-ozicheri-autosphere-oojn7j4u7id.ws-eu117.gitpod.io'
+    '8000-ozicheri-autosphere-oojn7j4u7id.ws-eu117.gitpod.io',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -54,9 +54,8 @@ INSTALLED_APPS = [
     'articles',
 ]
 
-
 cloudinary.config(
-  secure=True
+    secure=True
 )
 
 MIDDLEWARE = [
@@ -90,22 +89,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'autosphere.wsgi.application'
 
-#DATABASES = {
-#    'default': db_url(os.getenv('DATABASE_URL', ''), conn_max_age=600) or {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': dj_database_url.parse(os.getenv("DATABASE_URL"))
 }
@@ -128,14 +111,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = (
+    'whitenoise.storage.CompressedManifestStaticFilesStorage'
+)
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+    'CLOUD_NAME': os.getenv(
+        'CLOUDINARY_CLOUD_NAME'
+    ),
+    'API_KEY': os.getenv(
+        'CLOUDINARY_API_KEY'
+    ),
+    'API_SECRET': os.getenv(
+        'CLOUDINARY_API_SECRET'
+    ),
 }
 
 MEDIA_URL = '/media/'
@@ -145,4 +136,3 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

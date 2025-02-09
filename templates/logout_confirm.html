@@ -3,15 +3,23 @@
 {% block body_class %}home-page{% endblock %}
 
 {% block content %}
+<!-- Container to center the logout confirmation card on the page -->
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <!-- Card for logout confirmation -->
     <div class="card p-4 shadow-sm" style="max-width: 500px; width: 100%;">
+        <!-- Title asking for logout confirmation -->
         <h2 class="text-center mb-4">Are you sure you want to log out?</h2>
 
+        <!-- Form to handle the logout action -->
         <form method="post" class="mb-3">
             {% csrf_token %}
+            <!-- CSRF protection token -->
+
+            <!-- Button to confirm logout, styled with a danger class -->
             <button type="submit" class="btn btn-danger w-100 mb-3">Yes, Log me out</button>
         </form>
 
+        <!-- Link to return to the articles page without logging out -->
         <a href="{% url 'articles' %}">
             <button class="btn btn-secondary w-100">Cancel</button>
         </a>

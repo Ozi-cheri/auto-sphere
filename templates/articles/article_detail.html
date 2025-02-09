@@ -4,44 +4,49 @@
 {% block content %}
 <div class="container my-5">
 
+    <!-- Article Section -->
     <article class="mb-4">
         <h1 class="display-4">{{ article.title }}</h1>
+        <!-- Article image with dynamic URL and alt text -->
         <img src="{{ article.image.url }}" alt="{{ article.title }}" class="img-fluid mb-4">
+        <!-- Article content -->
         <p>{{ article.content }}</p>
+        <!-- Published date -->
         <p class="published-date text-muted">Published on: {{ article.published_date }}</p>
 
-
+        <!-- Author Section -->
         <div class="alert alert-info d-flex align-items-center">
             <i class="fas fa-user me-2"></i>
             <strong>Posted by: {{ article.user.username }}</strong>
         </div>
 
-
+        <!-- Comment Indicator Section -->
         <div class="comment-indicator d-flex align-items-center mt-4">
             <i class="fas fa-comments me-2"></i>
             <span class="count">{{ article.comment_count }}</span> Comments
         </div>
     </article>
 
-
+    <!-- Comments Section -->
     <section class="comments mt-5">
         <h2 class="h4 mb-3">Comments ({{ article.comment_count }})</h2>
         {% for comment in comments %}
         <div class="comment mb-3 p-3 border rounded shadow-sm">
+            <!-- Comment user and text -->
             <p><strong>{{ comment.user.username }}</strong> said:</p>
             <p class="comment-text" id="comment-text-{{ comment.id }}">{{ comment.text }}</p>
             <p class="comment-date text-muted small">{{ comment.created_at }}</p>
 
+            <!-- Edit/Delete buttons for the comment owner -->
             {% if comment.user == request.user %}
             <div class="d-flex gap-2">
-
+                <!-- Delete comment button with modal trigger -->
                 <button class="btn btn-danger btn-sm delete-comment-btn" data-bs-toggle="modal"
                     data-bs-target="#deleteCommentModal" data-delete-comment-url="{% url 'delete_comment' comment.id %}"
                     data-comment-text="{{ comment.text }}">
                     Delete
                 </button>
-
-
+                <!-- Edit comment button with modal trigger -->
                 <button class="btn btn-warning btn-sm edit-comment-btn" data-bs-toggle="modal"
                     data-bs-target="#editCommentModal" data-edit-comment-url="{% url 'edit_comment' comment.id %}"
                     data-comment-text="{{ comment.text }}">
@@ -51,14 +56,16 @@
             {% endif %}
         </div>
         {% empty %}
+        <!-- Message when no comments are available -->
         <p>No comments yet. Be the first to comment!</p>
         {% endfor %}
     </section>
 
-
+    <!-- Add Comment Section -->
     <section class="add-comment mt-5">
         <h2 class="h4 mb-3">Add a Comment</h2>
         {% if user.is_authenticated %}
+        <!-- Form for authenticated users to add a comment -->
         <form method="post" action="{% url 'add_comment' article.id %}" class="comment-form">
             {% csrf_token %}
             <div class="mb-3">
@@ -68,12 +75,13 @@
             <button type="submit" class="btn btn-primary">Submit Comment</button>
         </form>
         {% else %}
+        <!-- Message prompting users to log in -->
         <p>You must <a href="{% url 'login' %}?next={{ request.path }}">log in</a> to comment.</p>
         {% endif %}
     </section>
 </div>
 
-
+<!-- Edit Comment Modal -->
 <div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="editCommentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -95,7 +103,7 @@
     </div>
 </div>
 
-
+<!-- Delete Comment Modal -->
 <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -114,6 +122,7 @@
                 <form method="POST" id="deleteCommentForm" action="#">
                     {% csrf_token %}
                     <div class="d-flex justify-content-end">
+                        <!-- Cancel and Confirm Delete buttons -->
                         <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
                             <i class="fas fa-times"></i> Cancel
                         </button>
@@ -126,6 +135,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}
