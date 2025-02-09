@@ -26,7 +26,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-ozicheri-autosphere-i787ma3fm6b.ws.codeinstitute-ide.net',
