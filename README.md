@@ -2,6 +2,8 @@
 
 Auto-Sphere is a modern, interactive platform designed to showcase articles about cars, provide user interactivity through upvotes, downvotes, and comments, and offer an engaging experience for both users and administrators.
 
+https://auto-sphere-0cb7f208e934.herokuapp.com
+
 # Table Of Contents
 
 
@@ -82,6 +84,9 @@ For this project, I implemented Agile methodology using GitHub Projects to manag
 
 I created a GitHub Project to organize tasks and streamline the development workflow. The project board follows a Kanban structure with the following columns:
 
+
+[GitHub Projects](https://github.com/ozi-cheri/auto-sphere)
+
 * To Do – Upcoming tasks and features to be implemented. It includes user stories, bug fixes, and enhancements that are planned but not yet started.
 
 
@@ -91,7 +96,10 @@ I created a GitHub Project to organize tasks and streamline the development work
 * Done – Completed tasks. Once a task is reviewed, tested, and deployed, it is moved to this column to indicate completion.
 
 
-### New Issues and Title-Epics
+ ![githubboard](static/images/githubboard.png)
+
+
+### New Issues and Title
 
 Instead of traditional Milestones, I structured work using New issues, title and description. After creating new issues, i then move them to Github board under to do task.
 
@@ -243,13 +251,13 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
 
  * Home page
    * Displays a welcome message introducing the site and its purpose as well as providing easy to login and and sign up links.
-     ![homepage](static/images/homepage.png)
+![homepage](static/images/homepage.png)
 
   * Header
   A consistent header is present on all pages where users can see the sites logo on top left
   It includes the site title and a navigation bar.
 
-    ![header](static/images/header.png)
+![header](static/images/header.png)
 
  * Navigation Bar
    * A fixed navbar with links to home, Sign up, login, logout and articles pages. The navigation bars are fully responsive and collapsible on smaller screens. Users can easily navigate the site using the navbar.
@@ -258,30 +266,30 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
  * Sign Up Page
     * Allows new users to create an account with secure validation before they could access the site.
 
-      ![signup](static/images/signup.png)
+  ![signup](static/images/signup.png)
 
  * Log In Page
      * Enables existing users to log in securely with a "Remember Me" checkbox for conveniences. If users wants to explore the site, there are been reminded to signup if they do not have an account.
 
-     ![login](static/images/login.png)
+  ![login](static/images/login.png)
 
 
   * Log Out Page
      * This page displays a modal asking, "Are you sure you want to log out?" This helps to confirms the users final decision before logging out.
 
 
-      ![logout](static/images/logout.png)
+  ![logout](static/images/logout.png)
 
   * Articles  Page
      * This page displays articles in a card layout with title, image, and truncated content preview. Upvote and downvote buttons are available with comment count displayed via a speech bubble icon. This helps rank articles by popularity and engagement.
 
-    ![article](static/images/articlespage.png)
+  ![article](static/images/articlespage.png)
 
   * Add Article
      * Registered users can contribute by submitting new articles. The form includes fields for the article title, content, and an optional car image upload. Articles are linked to the user who created them.
 
      
-     ![addarticle](static/images/addarticle.png)
+  ![addarticle](static/images/addarticle.png)
 
 
    
@@ -290,44 +298,44 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
      * A confirmation message is displayed when a user successfully submits an article, comment, login and more. This ensures that users receive feedback on their actions.
 
 
-      ![feedback](static/images/feedback.png)
+  ![feedback](static/images/feedback.png)
 
   * Detailed Article Page
      * Clicking on an article opens a detailed view.
      Users can read the full content along with comments from other users.
 
 
-     ![detailedarticle](static/images/detailedarticle.png)
+  ![detailedarticle](static/images/detailedarticle.png)
 
    * Pagination for Articles
      pagination is implemented on the articles page to improve loading speed and navigation. Users will be able to click previous or next to browse more articles.
 
-     ![pagination](static/images/pagination.png)
+  ![pagination](static/images/pagination.png)
 
   *  User Comment Section
      * Login users can leave comments on articles.
     Comments are displayed under the article with timestamps and user details.
 
-      ![comment](static/images/comment.png)
+  ![comment](static/images/comment.png)
 
 
  * Upvote and Downvote Feature:
    Users can engage with articles by upvoting or downvoting them. This feature helps highlight popular content and gather feedback based on user preferences.
 
      
-   ![votes](static/images/votes.png)
+  ![votes](static/images/votes.png)
 
 
   * Edit And Edit Update Section
      * Users can edit their own articles. This ensures flexibility in case of content updates.
 
-      ![edit](static/images/edit.png)
+  ![edit](static/images/edit.png)
 
 
   * Delete Comment And Confirmation
     * Login users have the option to delete their own comment. Before deleting a comment, users receive a confirmation prompt to prevents accidental deletions.
 
-       ![delete](static/images/delete.png)
+  ![delete](static/images/delete.png)
   
   
   * Must Log In Section
@@ -335,19 +343,19 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
     * Certain features (e.g., adding articles, commenting, upvoting/downvoting) require users to log in.
     Unauthorized users are redirected to the login page when they attempt restricted actions.
 
-     ![mustlogin](static/images/mustlogin.png)
+  ![mustlogin](static/images/mustlogin.png)
 
        
   * Footer
 
       * Contains copyright information.
 
-      ![footer](static/images/footer.png)
+  ![footer](static/images/footer.png)
 
   * Admin Dashboard
       * This page allows the site owner to manage articles, comments, delete articles, etc.
 
-      ![admin](static/images/admin.png)
+  ![admin](static/images/admin.png)
 
 
  [Back to Top](#)
