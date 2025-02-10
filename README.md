@@ -2,6 +2,9 @@
 
 Auto-Sphere is a modern, interactive platform designed to showcase articles about cars, provide user interactivity through upvotes, downvotes, and comments, and offer an engaging experience for both users and administrators.
 
+
+![autosphere](static/images/autosphere.png)
+
 https://auto-sphere-0cb7f208e934.herokuapp.com
 
 # Table Of Contents
@@ -257,7 +260,7 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
   A consistent header is present on all pages where users can see the sites logo on top left
   It includes the site title and a navigation bar.
 
-![header](static/images/header.png)
+ ![header](static/images/header.png)
 
  * Navigation Bar
    * A fixed navbar with links to home, Sign up, login, logout and articles pages. The navigation bars are fully responsive and collapsible on smaller screens. Users can easily navigate the site using the navbar.
@@ -266,7 +269,7 @@ For a clean and modern look, the project uses Arial, sans-serif as the primary f
  * Sign Up Page
     * Allows new users to create an account with secure validation before they could access the site. I performed series of tests and i asked some friends to do same to make sure the deployed site is functioning properly.
 
-  ![signup](static/images/signup.png)
+ ![signup](static/images/signup.png)
 
  * Log In Page
      * Enables existing users to log in securely with a "Remember Me" checkbox for conveniences. If users wants to explore the site, there are been reminded to signup if they do not have an account.

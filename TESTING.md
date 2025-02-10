@@ -162,6 +162,9 @@ Below are the tools used for code validations.
 ### Light house Testing
 
 
+![lighthouse](static/images/lighthouse.png)
+
+
 
 ### Known/Resolved Bugs
 
